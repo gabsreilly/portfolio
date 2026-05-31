@@ -58,7 +58,7 @@ export type CampaignSection = {
   /** Optional in-context call to action (e.g., link to the blog post). */
   cta?: { label: string; href: string };
   /** Background band — defaults to "paper". */
-  band?: "paper" | "paper-2" | "lime" | "blue" | "stone";
+  band?: "paper" | "paper-2" | "lime" | "blue" | "orange" | "stone";
 };
 
 export type GalleryItem = {

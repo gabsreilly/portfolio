@@ -22,14 +22,14 @@ export const about = {
   forLine:  "Making brands harder to forget.",
 
   shortBio:
-    "I lead enterprise content at Stellar, the open blockchain that quietly moves about $55B a year for institutions like PayPal, Visa, MoneyGram, and Franklin Templeton.",
+    "I lead enterprise content at Stellar, the open blockchain moving about $55B a year for institutions like PayPal, Visa, MoneyGram, and Franklin Templeton.",
 
   paragraphs: [
-    "I'm Gabriella. I lead enterprise content at Stellar, the open blockchain that quietly moves about $55B a year for institutions like PayPal, Visa, MoneyGram, and Franklin Templeton.",
-    "I've spent the last decade learning how to write about technology that most people don't really want to read about. Cybersecurity software, then network infrastructure, now an open financial system the press still mostly insists on calling \"crypto.\" The brief almost never changes: the product is real and serious, and the audience hasn't been given a reason to believe that yet.",
-    "What I actually do is something I keep calling narrative infrastructure, mostly because nothing else describes it. I figure out where a company's internal story disagrees with the one it's telling in public, and what the audience needs to hear before any of it can land. The work starts with an audit and ends with a system that keeps running after I'm gone.",
-    "On the side I run The Exposure Project, a small publication about OCD, anxiety, and the mental-health conversation most workplaces still don't quite know how to have. It started in 2020 because I couldn't keep hiding mine, and it has slowly become a community where strangers send me their journal entries and I publish them alongside my own.",
-    "I live in San Francisco. I'm a member of Latinas in Tech and finishing a Masters in Marketing Technology at Santa Clara.",
+    "I'm Gabriella. I lead enterprise content at Stellar, the open blockchain moving about $55B a year for PayPal, Visa, MoneyGram, and Franklin Templeton.",
+    "Before Stellar I ran social at Nordstrom and demand gen at Imperva. My work has spanned B2C and B2B. The discipline is the same: figure out what the audience cares about, then translate the work into language that earns their attention.",
+    "I think about marketing as full funnel. Culture moments at the top, narrative infrastructure in the middle, conversion at the bottom. What I bring is the cultural read: what people are paying attention to, before the rest of the industry catches up. Stable Summer is the cleanest example. Built for institutional buyers, it traveled through Cannes, FWB Fest, and the right corners of crypto culture.",
+    "On the side I run The Exposure Project, a publication about OCD, anxiety, and the mental-health conversation most workplaces don't know how to have. It started in 2020 because I couldn't keep hiding mine. Now strangers send me journal entries, and I publish them alongside my own.",
+    "San Francisco. Member of Latinas in Tech, finishing a Masters in Marketing Technology at Santa Clara.",
   ],
 
   practising: [

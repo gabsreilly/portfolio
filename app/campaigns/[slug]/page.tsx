@@ -303,6 +303,8 @@ function bandClass(band: string | undefined): string {
       return "bg-lime";
     case "blue":
       return "bg-blue text-paper";
+    case "orange":
+      return "bg-orange text-cream";
     case "stone":
       return "bg-stone";
     default:

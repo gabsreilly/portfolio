@@ -299,22 +299,22 @@ function MoreRooms() {
     { label: "The Exposure Project",  tag: "a small publication",   href: "/exposure" },
   ];
   return (
-    <section className="bg-orange px-4 py-3 md:px-8 md:py-4">
+    <section className="bg-orange px-4 py-3 text-cream md:px-8 md:py-4">
       <div className="mx-auto max-w-[1300px]">
-        <div className="grid divide-y divide-ink/15 md:grid-cols-2 md:divide-x md:divide-y-0">
+        <div className="grid divide-y divide-cream/30 md:grid-cols-2 md:divide-x md:divide-y-0">
           {rooms.map((r) => (
             <Reveal key={r.href}>
               <Link
                 href={r.href}
                 className="group flex items-baseline justify-between gap-4 py-4 md:px-6 md:py-4"
               >
-                <h3 className="font-display text-lg leading-tight text-ink md:text-xl">
+                <h3 className="font-display text-lg leading-tight text-cream md:text-xl">
                   {r.label}{" "}
-                  <span className="ml-1 inline-block text-ink-2 transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-1" style={{ color: "var(--cream-2)" }}>
                     ↗
                   </span>
                 </h3>
-                <span className="label hidden md:inline" style={{ color: "var(--ink-2)" }}>
+                <span className="label hidden md:inline" style={{ color: "var(--cream-2)" }}>
                   {r.tag}
                 </span>
               </Link>
