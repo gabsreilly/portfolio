@@ -1,26 +1,169 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* White Chocolate base + navy / orange / lime editorial palette */
+  --paper:      #EDE6D2;   /* White Chocolate — warm pale cream, primary background */
+  --paper-2:    #DFD8C1;   /* slightly deeper warm cream */
+  --card:       #F1ECDB;   /* lightest warm cream — inset cards on dark blocks */
+
+  --blue:       #1A2680;   /* deep navy — anchor color (print-mag gravity) */
+  --orange:     #FC5226;   /* Portland Orange — warm pop accent */
+  --lime:       #C8D046;   /* June Bud — bright cool pop, doubles as a band color */
+
+  --stone:      #9aa097;   /* dove stone grey */
+  --stone-2:    #b1b5ad;
+
+  --ink:        #1a1714;
+  --ink-2:      #4a443d;
+  --ink-3:      #7d756a;
+
+  --cream:      #F1ECDB;
+  --cream-2:    rgba(241, 236, 219, 0.72);
+  --cream-3:    rgba(241, 236, 219, 0.45);
+
+  --line:       rgba(26, 23, 20, 0.16);
+  --line-light: rgba(238, 240, 242, 0.22);
+
+  /* Back-compat: --accent maps to lime, the new highlight color */
+  --accent:     var(--lime);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper:      var(--paper);
+  --color-paper-2:    var(--paper-2);
+  --color-card:       var(--card);
+  --color-blue:       var(--blue);
+  --color-orange:     var(--orange);
+  --color-lime:       var(--lime);
+  --color-stone:      var(--stone);
+  --color-stone-2:    var(--stone-2);
+  --color-ink:        var(--ink);
+  --color-ink-2:      var(--ink-2);
+  --color-ink-3:      var(--ink-3);
+  --color-cream:      var(--cream);
+  --color-cream-2:    var(--cream-2);
+  --color-cream-3:    var(--cream-3);
+  --color-line:       var(--line);
+  --color-line-light: var(--line-light);
+  --color-accent:     var(--accent);
+
+  --font-sans:    var(--font-geist-sans);
+  --font-mono:    var(--font-geist-mono);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection { background: var(--ink); color: var(--paper); }
+
+/* ───── Display — Big Bird (TAYBigBirdRegular, single weight) ───── */
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+/* Big Bird ships only Regular; these classes still tighten letter-spacing
+   for big display moments even when the weight axis has nothing to give. */
+.display-heavy { font-weight: 400; letter-spacing: -0.04em; }
+.display-bold  { font-weight: 400; letter-spacing: -0.03em; }
+
+/* ───── Serif — Instrument Serif, reserved for the hero wordmark ───── */
+.font-serif {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+/* ───── Labels ───── */
+
+/* Uppercase tracked kicker (e.g. "BRAND STRATEGIST & ...") */
+.label {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 400;
+}
+
+/* Parenthetical lowercase — nav-style. (work), (about), (notes) */
+.label-paren {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--ink-2);
+  text-transform: lowercase;
+}
+.label-paren::before { content: "("; }
+.label-paren::after  { content: ")"; }
+
+/* When inside .on-dark, labels lighten */
+.on-dark .label       { color: var(--cream-2); }
+.on-dark .label-paren { color: var(--cream-2); }
+
+/* ───── Reveal on scroll ───── */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity   1100ms cubic-bezier(0.22, 0.7, 0.2, 1),
+    transform 1100ms cubic-bezier(0.22, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ───── Refined link underline (wipe out on hover) ───── */
+.link { position: relative; display: inline-block; }
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0.05em;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 500ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+.link:hover::after { transform: scaleX(0); transform-origin: right; }
+
+/* ───── Rules ───── */
+.rule       { height: 1px; background: var(--line); }
+.rule-light { height: 1px; background: var(--line-light); }
+
+/* ───── Vertical edge watermark text ───── */
+.edge-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-geist-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+/* ───── Drift used by the hover preview ───── */
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -6px, 0); }
+}
+.drift { animation: drift 7s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .drift  { animation: none; }
+  html { scroll-behavior: auto !important; }
 }
