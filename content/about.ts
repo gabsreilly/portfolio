@@ -28,7 +28,7 @@ export const about = {
     "I'm Gabriella. I lead enterprise content at Stellar, the open blockchain moving about $55B a year for PayPal, Visa, MoneyGram, and Franklin Templeton.",
     "Before Stellar I ran social at Nordstrom and demand gen at Imperva. My work has spanned B2C and B2B. The discipline is the same: figure out what the audience cares about, then translate the work into language that earns their attention.",
     "I think about marketing as full funnel. Culture moments at the top, narrative infrastructure in the middle, conversion at the bottom. What I bring is the cultural read: what people are paying attention to, before the rest of the industry catches up. Stable Summer is the cleanest example. Built for institutional buyers, it traveled through Cannes, FWB Fest, and the right corners of crypto culture.",
-    "On the side I run The Exposure Project, a publication about OCD, anxiety, and the mental-health conversation most workplaces don't know how to have. It started in 2020 because I couldn't keep hiding mine. Now strangers send me journal entries, and I publish them alongside my own.",
+    "On the side I run The Exposure Project, a publication about OCD and anxiety. I write some of it; readers send in the rest.",
     "San Francisco. Member of Latinas in Tech, finishing a Masters in Marketing Technology at Santa Clara.",
   ],
 
