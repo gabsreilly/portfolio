@@ -23,7 +23,7 @@ export async function generateMetadata({
   const c = getCampaign(slug);
   if (!c) return { title: "Not found" };
   return {
-    title: `${c.title} — Gabriella Pellagatti`,
+    title: `${c.title} — Gabriella O'Reilly`,
     description: c.summary,
   };
 }

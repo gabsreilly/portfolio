@@ -20,7 +20,7 @@ export function SiteHeader() {
           href="/"
           className="font-display display-bold text-xl leading-none tracking-tight"
         >
-          Gabriella Pellagatti
+          Gabriella O'Reilly
         </Link>
         <Link href="/#contact" className="label-paren link">
           contact
@@ -41,7 +41,7 @@ export function SiteHeader() {
           href="/"
           className="justify-self-center whitespace-nowrap font-display display-bold text-2xl leading-none tracking-tight"
         >
-          Gabriella Pellagatti
+          Gabriella O'Reilly
         </Link>
 
         <nav className="flex justify-end gap-6">

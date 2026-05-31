@@ -70,7 +70,7 @@ function Hero() {
 
         <Reveal delay={560}>
           <h1 className="mt-10 whitespace-nowrap text-center font-serif italic leading-[0.9] text-[clamp(2.5rem,8vw,8rem)] tracking-[-0.03em] md:mt-14">
-            Gabriella Pellagatti
+            Gabriella O'Reilly
           </h1>
         </Reveal>
       </div>
@@ -83,7 +83,7 @@ function PortraitSlot() {
     <figure className="relative aspect-square w-full overflow-hidden rounded-sm ring-1 ring-line">
       <Image
         src="/portrait.jpg"
-        alt="Gabriella Pellagatti"
+        alt="Gabriella O'Reilly"
         width={520}
         height={520}
         className="h-full w-full object-cover"

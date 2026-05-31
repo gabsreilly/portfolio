@@ -42,11 +42,11 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Gabriella Pellagatti — An archive",
+  title: "Gabriella O'Reilly — An archive",
   description:
     "Translator of tech-jargon, online-speak, and stories that matter. A personal archive of work, words, and a few side things.",
   openGraph: {
-    title: "Gabriella Pellagatti — An archive",
+    title: "Gabriella O'Reilly — An archive",
     description:
       "Translator of tech-jargon, online-speak, and stories that matter.",
     type: "website",

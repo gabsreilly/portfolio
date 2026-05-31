@@ -80,7 +80,7 @@ export function SiteFooter({ parent }: SiteFooterProps = {}) {
         </div>
 
         <div className="mt-20 flex flex-wrap items-end justify-between gap-4">
-          <span className="label">© {year} Gabriella Pellagatti</span>
+          <span className="label">© {year} Gabriella O'Reilly</span>
           <span className="label italic">
             {about.place} ·{" "}
             {new Date().toLocaleDateString("en-US", {

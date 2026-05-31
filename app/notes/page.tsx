@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { essays } from "@/content/writing";
 
 export const metadata: Metadata = {
-  title: "Notes — Gabriella Pellagatti",
+  title: "Notes — Gabriella O'Reilly",
   description:
     "Essays and short pieces on B2B content, voice, and strategy.",
 };

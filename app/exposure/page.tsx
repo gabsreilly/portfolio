@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { exposure } from "@/content/exposure";
 
 export const metadata: Metadata = {
-  title: "The Exposure Project — Gabriella Pellagatti",
+  title: "The Exposure Project — Gabriella O'Reilly",
   description: exposure.subtitle,
 };
 

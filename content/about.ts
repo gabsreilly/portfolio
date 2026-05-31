@@ -13,7 +13,7 @@
  */
 
 export const about = {
-  name: "Gabriella Pellagatti",
+  name: "Gabriella O'Reilly",
   tagline:
     "Translator of tech-jargon, online-speak, and stories that matter.",
 
