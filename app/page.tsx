@@ -181,72 +181,110 @@ function Spotlight() {
           <span className="label">Spotlight</span>
         </div>
         <p className="font-display italic text-base text-ink-2 md:text-lg">
-          A closer look at recent campaigns.
+          The work I'd point to first.
         </p>
       </div>
 
-      <div
-        className={`grid gap-3 md:gap-4 ${
-          isSingle ? "" : "md:grid-cols-2"
-        }`}
-      >
-        {campaigns.map((c, i) => (
-          <Reveal key={c.slug} delay={i * 90}>
-            <Link
-              href={`/campaigns/${c.slug}`}
-              className="group block overflow-hidden rounded-sm ring-1 ring-line"
-            >
-              <div
-                className={`relative w-full overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.01] ${
-                  isSingle ? "aspect-[16/7]" : "aspect-[16/10]"
-                }`}
-                style={
-                  c.heroImage
-                    ? undefined
-                    : {
-                        background: `linear-gradient(135deg, ${c.tones[0]} 0%, ${c.tones[1]} 100%)`,
-                      }
-                }
-              >
-                {c.heroImage ? (
-                  <Image
-                    src={c.heroImage}
-                    alt={c.title}
-                    width={1600}
-                    height={700}
-                    className="h-full w-full object-cover"
-                  />
-                ) : null}
-                <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-7">
-                  <span
-                    className="label"
-                    style={{ color: "rgba(255,255,255,0.78)" }}
-                  >
-                    {c.year}
-                    {c.client ? ` · ${c.client}` : ""}
-                  </span>
-                  <h3 className="mt-1 font-display italic leading-tight text-white text-2xl md:text-3xl">
-                    {c.title}
-                    {c.tagline && (
-                      <span className="ml-3 hidden font-display italic text-white/75 md:inline md:text-xl">
-                        — {c.tagline}
-                      </span>
-                    )}
-                  </h3>
-                </div>
-                <div className="absolute right-3 top-3">
-                  <span
-                    className="label-paren"
-                    style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.65rem" }}
-                  >
-                    open
-                  </span>
+      {isSingle ? (
+        /* Single campaign — editorial side-by-side feature */
+        <Reveal>
+          <Link
+            href={`/campaigns/${campaigns[0].slug}`}
+            className="group block"
+          >
+            <div className="grid gap-6 md:grid-cols-12 md:gap-10">
+              {/* Image column */}
+              <div className="md:col-span-7">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-sm ring-1 ring-line transition-transform duration-500 ease-out group-hover:scale-[1.005]">
+                  {campaigns[0].heroImage ? (
+                    <Image
+                      src={campaigns[0].heroImage}
+                      alt={campaigns[0].title}
+                      width={1200}
+                      height={900}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div
+                      className="h-full w-full"
+                      style={{
+                        background: `linear-gradient(135deg, ${campaigns[0].tones[0]} 0%, ${campaigns[0].tones[1]} 100%)`,
+                      }}
+                    />
+                  )}
                 </div>
               </div>
-            </Link>
-          </Reveal>
-        ))}
-      </div>
+              {/* Text column */}
+              <div className="flex flex-col justify-center md:col-span-5">
+                <span className="label">
+                  {campaigns[0].year}
+                  {campaigns[0].client ? ` · ${campaigns[0].client}` : ""}
+                </span>
+                <h3 className="mt-3 font-display display-bold text-[clamp(2rem,4.5vw,3rem)] leading-[1] tracking-[-0.02em]">
+                  {campaigns[0].title}
+                </h3>
+                {campaigns[0].tagline && (
+                  <p className="mt-3 font-display italic text-xl leading-snug text-ink-2 md:text-2xl">
+                    {campaigns[0].tagline}
+                  </p>
+                )}
+                <p className="mt-5 text-base leading-relaxed text-ink-2 md:text-lg md:leading-relaxed">
+                  {campaigns[0].summary}
+                </p>
+                <span className="mt-8 inline-flex items-baseline gap-2 border-b-2 border-orange pb-1 self-start font-display text-base leading-tight transition-colors group-hover:text-orange md:text-lg">
+                  View campaign
+                  <span className="italic text-orange">↗</span>
+                </span>
+              </div>
+            </div>
+          </Link>
+        </Reveal>
+      ) : (
+        /* Multiple campaigns — 2-col grid of image-led tiles */
+        <div className="grid gap-3 md:grid-cols-2 md:gap-4">
+          {campaigns.map((c, i) => (
+            <Reveal key={c.slug} delay={i * 90}>
+              <Link
+                href={`/campaigns/${c.slug}`}
+                className="group block overflow-hidden rounded-sm ring-1 ring-line"
+              >
+                <div
+                  className="relative aspect-[16/10] w-full overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+                  style={
+                    c.heroImage
+                      ? undefined
+                      : {
+                          background: `linear-gradient(135deg, ${c.tones[0]} 0%, ${c.tones[1]} 100%)`,
+                        }
+                  }
+                >
+                  {c.heroImage ? (
+                    <Image
+                      src={c.heroImage}
+                      alt={c.title}
+                      width={1600}
+                      height={1000}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : null}
+                  <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-7">
+                    <span
+                      className="label"
+                      style={{ color: "rgba(255,255,255,0.78)" }}
+                    >
+                      {c.year}
+                      {c.client ? ` · ${c.client}` : ""}
+                    </span>
+                    <h3 className="mt-1 font-display italic leading-tight text-white text-2xl md:text-3xl">
+                      {c.title}
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
@@ -261,7 +299,7 @@ function MoreRooms() {
     { label: "The Exposure Project",  tag: "a small publication",   href: "/exposure" },
   ];
   return (
-    <section className="bg-stone px-4 py-3 md:px-8 md:py-4">
+    <section className="bg-orange px-4 py-3 md:px-8 md:py-4">
       <div className="mx-auto max-w-[1300px]">
         <div className="grid divide-y divide-ink/15 md:grid-cols-2 md:divide-x md:divide-y-0">
           {rooms.map((r) => (
