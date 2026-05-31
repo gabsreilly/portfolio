@@ -25,7 +25,7 @@ export function SiteFooter({ parent }: SiteFooterProps = {}) {
             >
               {parent.label}{" "}
               <span className="italic" style={{ color: "var(--cream-2)" }}>
-                ↗
+                ↗︎
               </span>
             </Link>
           </div>
@@ -59,7 +59,7 @@ export function SiteFooter({ parent }: SiteFooterProps = {}) {
                         rel="noopener noreferrer"
                         className="link text-lg"
                       >
-                        {s.label} ↗
+                        {s.label} ↗︎
                       </a>
                     </li>
                   ))}

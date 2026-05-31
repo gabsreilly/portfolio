@@ -233,7 +233,7 @@ function Spotlight() {
                 </p>
                 <span className="mt-8 inline-flex items-baseline gap-2 border-b-2 border-orange pb-1 self-start font-display text-base leading-tight transition-colors group-hover:text-orange md:text-lg">
                   View campaign
-                  <span className="italic text-orange">↗</span>
+                  <span className="italic text-orange">↗︎</span>
                 </span>
               </div>
             </div>
@@ -311,7 +311,7 @@ function MoreRooms() {
                 <h3 className="font-display text-lg leading-tight text-cream md:text-xl">
                   {r.label}{" "}
                   <span className="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-1" style={{ color: "var(--cream-2)" }}>
-                    ↗
+                    ↗︎
                   </span>
                 </h3>
                 <span className="label hidden md:inline" style={{ color: "var(--cream-2)" }}>

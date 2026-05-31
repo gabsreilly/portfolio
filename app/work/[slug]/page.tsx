@@ -209,7 +209,7 @@ export default async function WorkPage({
               href={`/work/${next.slug}`}
               className="mt-3 block font-display display-bold text-[clamp(2rem,5vw,4rem)] leading-[1] tracking-[-0.02em] transition-colors duration-500 hover:text-ink-2"
             >
-              {next.title} <span className="italic text-ink-3">↗</span>
+              {next.title} <span className="italic text-ink-3">↗︎</span>
             </Link>
           </div>
         </section>

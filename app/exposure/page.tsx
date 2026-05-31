@@ -89,7 +89,7 @@ export default function ExposurePage() {
                     rel="noopener noreferrer"
                     className="link font-display text-2xl"
                   >
-                    {exposure.site.label} ↗
+                    {exposure.site.label} ↗︎
                   </a>
                   <a
                     href={exposure.instagram.href}
@@ -132,7 +132,7 @@ export default function ExposurePage() {
               rel="noopener noreferrer"
               className="link font-display text-xl md:text-2xl"
             >
-              {exposure.site.label} ↗
+              {exposure.site.label} ↗︎
             </a>
           </div>
         </section>

@@ -178,7 +178,7 @@ export default async function CampaignPage({
                               className="group inline-flex items-baseline gap-2 border-b-2 border-orange pb-1 font-display text-base leading-tight transition-colors hover:text-orange md:text-lg"
                             >
                               {s.cta.label}
-                              <span className="italic text-orange">↗</span>
+                              <span className="italic text-orange">↗︎</span>
                             </a>
                           </div>
                         </Reveal>
@@ -224,7 +224,7 @@ export default async function CampaignPage({
                           >
                             <span className="font-display text-[clamp(1.25rem,2.5vw,1.75rem)] leading-tight tracking-[-0.01em] transition-colors duration-500 group-hover:text-ink-2">
                               {w.title}{" "}
-                              <span className="italic text-ink-3">↗</span>
+                              <span className="italic text-ink-3">↗︎</span>
                             </span>
                             {(w.publication || w.date) && (
                               <div className="mt-2">
@@ -452,7 +452,7 @@ function Reactions({ items }: { items: ReactionItem[] }) {
                   rel="noreferrer"
                   className="label-paren link mt-2 inline-block"
                 >
-                  view original ↗
+                  view original ↗︎
                 </a>
               )}
             </figcaption>
