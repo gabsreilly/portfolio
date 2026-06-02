@@ -51,6 +51,8 @@ export type CampaignSection = {
   stats?: { label: string; value: string }[];
   /** Italic pull quote rendered with editorial weight. */
   pullQuote?: string;
+  /** Embedded X / Twitter post by status id (renders the official card). */
+  tweetId?: string;
   /** Image/video grid. Each item renders as a tile. */
   gallery?: GalleryItem[];
   /** Earned social proof — screenshots + engagement metrics. */
@@ -305,6 +307,7 @@ export const campaigns: Campaign[] = [
         kicker: "The proof",
         title: "Show the work, skip the pitch.",
         body: "A launch video and a press release would have bounced off this audience. Build Better ran instead as a stream of evidence a developer could check: short films on performance, security, and sustainability, founder testimonials from projects already live on mainnet, and a $50K Dev.to hackathon that turned curiosity into commits. The boldest swing was the Build This Better Booth, where non-technical storytellers pitched what they wanted built better and a panel that included Idris Elba sent the strongest ideas to developer teams, closing at Meridian.",
+        tweetId: "1897748002480984218",
         gallery: [
           {
             title: "Design principles",
