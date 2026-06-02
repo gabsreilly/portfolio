@@ -45,6 +45,7 @@ export const hits: Hit[] = [
     number: "III",
     title: "Block by Block Podcast",
     body: "Stellar's podcast rebuilt from a Zoom call with two mics into a real in-house studio for video and editorial.",
+    image: "/work/sdf-studio-podcast/block-by-block.png",
     tones: ["#2a2722", "#5b5448"],
     href: "/work/sdf-studio-podcast",
     linkLabel: "View project",
