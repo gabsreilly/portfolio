@@ -291,7 +291,7 @@ export const campaigns: Campaign[] = [
     summary:
       "The go-to-market campaign that launched Soroban, Stellar's smart contracts platform, to developers who were already building somewhere else.",
     tones: ["#0f1a14", "#5ef2a0"], // terminal dark → built-better green
-    heroTweetId: "1869830936315183244", // Build Better Workshop, Prague — header video
+    heroVideo: "/campaigns/build-better/prague-workshop.mp4", // Prague workshop — just the video, extracted from the X post
     sections: [
       {
         kicker: "The setup",
