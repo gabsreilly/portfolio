@@ -124,7 +124,7 @@ export default async function CampaignPage({
                 className={`${bandClass(s.band)} ${i === 0 ? "pt-16 md:pt-24" : "pt-14 md:pt-20"} pb-14 md:pb-20`}
               >
                 <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-                  <div className="grid gap-8 md:grid-cols-12 md:gap-10">
+                  <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
                     <div className="md:col-span-3">
                       {s.kicker && (
                         <Reveal>
@@ -205,7 +205,7 @@ export default async function CampaignPage({
         {campaign.writing && campaign.writing.length > 0 && (
           <section className="bg-lime pt-10 pb-10 md:pt-14 md:pb-14">
             <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-              <div className="grid gap-8 md:grid-cols-12 md:gap-10">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
                 <div className="md:col-span-3">
                   <Reveal>
                     <span className="label">Words</span>
@@ -255,7 +255,7 @@ export default async function CampaignPage({
         {campaign.outcomes && campaign.outcomes.length > 0 && (
           <section className="bg-blue pt-14 pb-14 text-paper md:pt-20 md:pb-20">
             <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-              <div className="grid gap-8 md:grid-cols-12 md:gap-10">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
                 <div className="md:col-span-3">
                   <Reveal>
                     <span className="label !text-paper/70">Outcomes</span>
