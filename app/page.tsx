@@ -6,8 +6,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { NowLine } from "@/components/now-line";
 import { projects } from "@/content/projects";
-import { campaigns } from "@/content/campaigns";
 import { about } from "@/content/about";
+import { hits } from "@/content/hits";
 
 export default function Home() {
   return (
@@ -15,11 +15,11 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
-        <Ethos />
-        <Work />
         <Spotlight />
-        <MoreRooms />
+        <Work />
         <About />
+        <Ethos />
+        <MoreRooms />
       </main>
       <SiteFooter />
     </>
@@ -32,7 +32,7 @@ export default function Home() {
    ───────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 pt-10 pb-10 md:px-10 md:pt-14 md:pb-14">
+    <section className="mx-auto max-w-[1400px] px-6 pt-6 pb-8 md:px-10 md:pt-8 md:pb-10">
       <Reveal>
         <div className="flex flex-wrap items-baseline justify-between gap-4">
           <span className="label">Based in San Francisco</span>
@@ -40,7 +40,7 @@ function Hero() {
         </div>
       </Reveal>
 
-      <div className="mt-20 md:mt-28">
+      <div className="mt-10 md:mt-14">
         <Reveal delay={120}>
           <p
             className="mx-auto max-w-3xl text-center uppercase"
@@ -69,7 +69,7 @@ function Hero() {
         </Reveal>
 
         <Reveal delay={560}>
-          <h1 className="mt-10 whitespace-nowrap text-center font-serif italic leading-[0.9] text-[clamp(2.5rem,8vw,8rem)] tracking-[-0.03em] md:mt-14">
+          <h1 className="mt-8 whitespace-nowrap text-center font-serif italic leading-[0.9] text-[clamp(2.5rem,8vw,8rem)] tracking-[-0.03em] md:mt-10">
             Gabriella O'Reilly
           </h1>
         </Reveal>
@@ -105,7 +105,7 @@ function Ethos() {
     >
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-3 flex items-center gap-3 md:mb-4">
-          <span className="font-display italic text-lg text-ink md:text-xl">I.</span>
+          <span className="font-display italic text-lg text-ink md:text-xl">IV.</span>
           <span className="label" style={{ color: "var(--ink)" }}>
             What guides me
           </span>
@@ -161,130 +161,61 @@ function Work() {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Spotlight — visual tiles linking to campaign sub-pages.
-   Counters the text-heavy index above with image-led blocks.
+   Spotlight — "My favorite hits". Small editorial cards mirroring
+   the "What guides me" layout. Sits first so the juice comes quick.
+   Cards link out when a `href` is set (campaign, post, anywhere).
    ───────────────────────────────────────────────────────────── */
 function Spotlight() {
-  if (campaigns.length === 0) return null;
-  const isSingle = campaigns.length === 1;
+  if (hits.length === 0) return null;
 
   return (
-    <section
-      id="spotlight"
-      className="mx-auto max-w-[1400px] px-6 pt-14 md:px-10 md:pt-20"
-    >
-      <div className="mb-4 flex flex-col gap-1 md:mb-5 md:flex-row md:items-baseline md:justify-between md:gap-6">
-        <div className="flex items-center gap-3">
-          <span className="font-display italic text-xl text-ink-3 md:text-2xl">
-            III.
+    <section id="spotlight" className="bg-lime px-6 py-6 md:px-10 md:py-8">
+      <div className="mx-auto max-w-[1400px]">
+        <div className="mb-3 flex items-center gap-3 md:mb-4">
+          <span className="font-display italic text-lg text-ink md:text-xl">I.</span>
+          <span className="label" style={{ color: "var(--ink)" }}>
+            My favorite hits
           </span>
-          <span className="label">Spotlight</span>
         </div>
-        <p className="font-display italic text-base text-ink-2 md:text-lg">
-          The work I'd point to first.
-        </p>
-      </div>
 
-      {isSingle ? (
-        /* Single campaign — editorial side-by-side feature */
-        <Reveal>
-          <Link
-            href={`/campaigns/${campaigns[0].slug}`}
-            className="group block"
-          >
-            <div className="grid gap-6 md:grid-cols-12 md:gap-10">
-              {/* Image column */}
-              <div className="md:col-span-7">
-                <div className="aspect-[4/3] w-full overflow-hidden rounded-sm ring-1 ring-line transition-transform duration-500 ease-out group-hover:scale-[1.005]">
-                  {campaigns[0].heroImage ? (
-                    <Image
-                      src={campaigns[0].heroImage}
-                      alt={campaigns[0].title}
-                      width={1200}
-                      height={900}
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <div
-                      className="h-full w-full"
-                      style={{
-                        background: `linear-gradient(135deg, ${campaigns[0].tones[0]} 0%, ${campaigns[0].tones[1]} 100%)`,
-                      }}
-                    />
-                  )}
+        <div className="grid gap-2 md:grid-cols-3 md:gap-3">
+          {hits.map((h, i) => {
+            const card = (
+              <div className="flex h-full flex-col border border-line bg-card p-4 transition-colors group-hover:border-orange">
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display italic text-sm text-ink-3">
+                    {h.number}.
+                  </span>
+                  <h3 className="font-display italic leading-tight text-ink text-base md:text-lg">
+                    {h.title}
+                  </h3>
                 </div>
-              </div>
-              {/* Text column */}
-              <div className="flex flex-col justify-center md:col-span-5">
-                <span className="label">
-                  {campaigns[0].year}
-                  {campaigns[0].client ? ` · ${campaigns[0].client}` : ""}
-                </span>
-                <h3 className="mt-3 font-display display-bold text-[clamp(2rem,4.5vw,3rem)] leading-[1] tracking-[-0.02em]">
-                  {campaigns[0].title}
-                </h3>
-                {campaigns[0].tagline && (
-                  <p className="mt-3 font-display italic text-xl leading-snug text-ink-2 md:text-2xl">
-                    {campaigns[0].tagline}
-                  </p>
-                )}
-                <p className="mt-5 text-base leading-relaxed text-ink-2 md:text-lg md:leading-relaxed">
-                  {campaigns[0].summary}
+                <p className="mt-2 text-xs leading-relaxed text-ink-2 md:text-sm">
+                  {h.body}
                 </p>
-                <span className="mt-8 inline-flex items-baseline gap-2 border-b-2 border-orange pb-1 self-start font-display text-base leading-tight transition-colors group-hover:text-orange md:text-lg">
-                  View campaign
-                  <span className="italic text-orange">↗︎</span>
-                </span>
+                {h.href && (
+                  <span className="mt-3 inline-flex items-baseline gap-1 self-start font-display text-xs leading-tight text-ink-2 transition-colors group-hover:text-orange md:text-sm">
+                    {h.linkLabel ?? "View"}
+                    <span className="italic text-orange">↗︎</span>
+                  </span>
+                )}
               </div>
-            </div>
-          </Link>
-        </Reveal>
-      ) : (
-        /* Multiple campaigns — 2-col grid of image-led tiles */
-        <div className="grid gap-3 md:grid-cols-2 md:gap-4">
-          {campaigns.map((c, i) => (
-            <Reveal key={c.slug} delay={i * 90}>
-              <Link
-                href={`/campaigns/${c.slug}`}
-                className="group block overflow-hidden rounded-sm ring-1 ring-line"
-              >
-                <div
-                  className="relative aspect-[16/10] w-full overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.01]"
-                  style={
-                    c.heroImage
-                      ? undefined
-                      : {
-                          background: `linear-gradient(135deg, ${c.tones[0]} 0%, ${c.tones[1]} 100%)`,
-                        }
-                  }
-                >
-                  {c.heroImage ? (
-                    <Image
-                      src={c.heroImage}
-                      alt={c.title}
-                      width={1600}
-                      height={1000}
-                      className="h-full w-full object-cover"
-                    />
-                  ) : null}
-                  <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-7">
-                    <span
-                      className="label"
-                      style={{ color: "rgba(255,255,255,0.78)" }}
-                    >
-                      {c.year}
-                      {c.client ? ` · ${c.client}` : ""}
-                    </span>
-                    <h3 className="mt-1 font-display italic leading-tight text-white text-2xl md:text-3xl">
-                      {c.title}
-                    </h3>
-                  </div>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+            );
+
+            return (
+              <Reveal key={h.number} delay={i * 90}>
+                {h.href ? (
+                  <Link href={h.href} className="group block h-full">
+                    {card}
+                  </Link>
+                ) : (
+                  <div className="group h-full">{card}</div>
+                )}
+              </Reveal>
+            );
+          })}
         </div>
-      )}
+      </div>
     </section>
   );
 }
@@ -339,8 +270,8 @@ function About() {
         <div className="md:col-span-3">
           <Reveal>
             <div className="flex items-center gap-3">
-              <span className="font-display italic text-2xl text-ink-3">IV.</span>
-              <span className="label">About</span>
+              <span className="font-display italic text-2xl text-ink-3">III.</span>
+              <span className="label">About me</span>
             </div>
           </Reveal>
         </div>
