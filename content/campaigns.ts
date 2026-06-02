@@ -305,7 +305,7 @@ export const campaigns: Campaign[] = [
       },
       {
         kicker: "The strategy",
-        title: "The work made the argument.",
+        title: "We led with content developers could use.",
         body: "Every chain says the same things: fast, scalable, secure, decentralized. Developers had heard all of it, so one more tagline was not going to win them over. They trust proof and they trust each other, so we built the campaign around both. We showed real projects using Soroban, explained the technology in the open, and gave people something worth sharing, so the message could travel without a media budget. The film below laid out the idea, and the rest of the campaign backed it up.",
         pullQuote: "Built better, so you can build better.",
         tweetId: "1897748002480984218",
@@ -313,7 +313,7 @@ export const campaigns: Campaign[] = [
       },
       {
         kicker: "The proof",
-        title: "The proof was a real business.",
+        title: "Decaf showed Soroban working in the real world.",
         body: "Decaf is a payments app built on Stellar that lets people across Latin America spend crypto at everyday shops. In the case study, Juliana explains why it matters: the world is changing, and people cannot be left behind. A real merchant solving a real problem was more convincing than any benchmark, so the case study led the season. The rest of the work supported it: a blog series on sustainability, performance, and security, Soroban 101 explainers, live Twitter Spaces and dev takeovers with a Solana co-founder, and an interactive map of Stellar's payment rails across more than 180 countries.",
         tweetId: "1859294165118431292",
         gallery: [
