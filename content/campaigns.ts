@@ -68,6 +68,8 @@ export type CampaignSection = {
 export type GalleryItem = {
   title: string;
   caption?: string;
+  /** Makes the whole tile a link (opens in a new tab). */
+  href?: string;
   /** Two-color gradient placeholder when no image/video is set. */
   tones?: [string, string];
   image?: string;
@@ -318,8 +320,9 @@ export const campaigns: Campaign[] = [
             tones: ["#0f1a14", "#5ef2a0"],
           },
           {
-            title: "Soroban 101",
-            caption: "Explainers that made the platform legible to newcomers.",
+            title: "Build Better Challenge",
+            caption: "An open call for builders to ship real projects on Soroban.",
+            href: "https://stellar.org/community/build-better-challenge",
             tones: ["#13233a", "#5ef2a0"],
           },
           {

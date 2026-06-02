@@ -148,61 +148,67 @@ export default async function CampaignPage({
                       )}
                     </div>
                     <div className="md:col-span-9">
-                      {s.title && (
-                        <Reveal delay={120}>
-                          <h2 className="font-display display-bold text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] tracking-[-0.02em]">
-                            {s.title}
-                          </h2>
-                        </Reveal>
-                      )}
-                      {s.body && (
-                        <Reveal delay={220}>
-                          <p className="mt-6 max-w-3xl text-lg leading-relaxed md:text-xl md:leading-[1.55]">
-                            {s.body}
-                          </p>
-                        </Reveal>
-                      )}
-                      {s.stats && s.stats.length > 0 && (
-                        <Reveal delay={340}>
-                          <dl className="mt-10 grid gap-x-8 gap-y-6 border-t border-line pt-6 md:grid-cols-3">
-                            {s.stats.map((stat) => (
-                              <div key={stat.label}>
-                                <dt className="label">{stat.label}</dt>
-                                <dd className="mt-2 font-display text-2xl leading-tight tracking-[-0.01em] md:text-3xl">
-                                  {stat.value}
-                                </dd>
+                      <div className={s.tweetId ? "md:flex md:items-start md:gap-10" : undefined}>
+                        <div className={s.tweetId ? "md:min-w-0 md:flex-1" : undefined}>
+                          {s.title && (
+                            <Reveal delay={120}>
+                              <h2 className="font-display display-bold text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] tracking-[-0.02em]">
+                                {s.title}
+                              </h2>
+                            </Reveal>
+                          )}
+                          {s.body && (
+                            <Reveal delay={220}>
+                              <p className="mt-6 max-w-3xl text-lg leading-relaxed md:text-xl md:leading-[1.55]">
+                                {s.body}
+                              </p>
+                            </Reveal>
+                          )}
+                          {s.stats && s.stats.length > 0 && (
+                            <Reveal delay={340}>
+                              <dl className="mt-10 grid gap-x-8 gap-y-6 border-t border-line pt-6 md:grid-cols-3">
+                                {s.stats.map((stat) => (
+                                  <div key={stat.label}>
+                                    <dt className="label">{stat.label}</dt>
+                                    <dd className="mt-2 font-display text-2xl leading-tight tracking-[-0.01em] md:text-3xl">
+                                      {stat.value}
+                                    </dd>
+                                  </div>
+                                ))}
+                              </dl>
+                            </Reveal>
+                          )}
+                          {s.pullQuote && (
+                            <Reveal delay={400}>
+                              <blockquote className="mt-10 max-w-2xl border-l-2 border-orange pl-6 font-display italic text-2xl leading-snug text-orange md:text-3xl">
+                                &ldquo;{s.pullQuote}&rdquo;
+                              </blockquote>
+                            </Reveal>
+                          )}
+                          {s.cta && (
+                            <Reveal delay={440}>
+                              <div className="mt-8">
+                                <a
+                                  href={s.cta.href}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="group inline-flex items-baseline gap-2 border-b-2 border-orange pb-1 font-display text-base leading-tight transition-colors hover:text-orange md:text-lg"
+                                >
+                                  {s.cta.label}
+                                  <span className="italic text-orange">↗︎</span>
+                                </a>
                               </div>
-                            ))}
-                          </dl>
-                        </Reveal>
-                      )}
-                      {s.pullQuote && (
-                        <Reveal delay={400}>
-                          <blockquote className="mt-10 max-w-2xl border-l-2 border-orange pl-6 font-display italic text-2xl leading-snug text-orange md:text-3xl">
-                            &ldquo;{s.pullQuote}&rdquo;
-                          </blockquote>
-                        </Reveal>
-                      )}
-                      {s.cta && (
-                        <Reveal delay={440}>
-                          <div className="mt-8">
-                            <a
-                              href={s.cta.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="group inline-flex items-baseline gap-2 border-b-2 border-orange pb-1 font-display text-base leading-tight transition-colors hover:text-orange md:text-lg"
-                            >
-                              {s.cta.label}
-                              <span className="italic text-orange">↗︎</span>
-                            </a>
+                            </Reveal>
+                          )}
+                        </div>
+                        {s.tweetId && (
+                          <div className="mt-8 w-full shrink-0 md:mt-1 md:w-[400px] lg:w-[460px]">
+                            <Reveal delay={460}>
+                              <TweetEmbed id={s.tweetId} className="w-full" />
+                            </Reveal>
                           </div>
-                        </Reveal>
-                      )}
-                      {s.tweetId && (
-                        <Reveal delay={460}>
-                          <TweetEmbed id={s.tweetId} />
-                        </Reveal>
-                      )}
+                        )}
+                      </div>
                       {s.tweetIds && s.tweetIds.length > 0 && (
                         <Reveal delay={460}>
                           <TweetWall ids={s.tweetIds} />
@@ -377,10 +383,10 @@ function PlaceholderHero({
 function Gallery({ items }: { items: GalleryItem[] }) {
   return (
     <div className="mt-10 grid gap-4 md:grid-cols-2 md:gap-6">
-      {items.map((item, i) => (
-        <figure key={i}>
+      {items.map((item, i) => {
+        const media = (
           <div
-            className="relative aspect-[4/3] w-full overflow-hidden rounded-sm ring-1 ring-line"
+            className="relative aspect-[4/3] w-full overflow-hidden rounded-sm ring-1 ring-line transition-transform duration-500 ease-out group-hover:scale-[1.01]"
             style={
               !item.image && !item.video
                 ? {
@@ -409,24 +415,53 @@ function Gallery({ items }: { items: GalleryItem[] }) {
                     className="label-paren"
                     style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.65rem" }}
                   >
-                    asset slot
+                    {item.href ? "visit ↗" : "asset slot"}
                   </span>
                 </div>
               </div>
             )}
           </div>
-          <figcaption className="mt-3 flex items-baseline justify-between gap-3">
-            <span className="font-display text-base leading-snug md:text-lg">
-              {item.title}
-            </span>
-          </figcaption>
-          {item.caption && (
-            <p className="mt-1 text-sm leading-relaxed text-ink-2">
-              {item.caption}
-            </p>
-          )}
-        </figure>
-      ))}
+        );
+        const caption = (
+          <>
+            <figcaption className="mt-3 flex items-baseline justify-between gap-3">
+              <span className="font-display text-base leading-snug md:text-lg">
+                {item.title}
+                {item.href && (
+                  <span className="ml-1 italic text-ink-3 transition-colors group-hover:text-orange">
+                    ↗︎
+                  </span>
+                )}
+              </span>
+            </figcaption>
+            {item.caption && (
+              <p className="mt-1 text-sm leading-relaxed text-ink-2">
+                {item.caption}
+              </p>
+            )}
+          </>
+        );
+        return (
+          <figure key={i}>
+            {item.href ? (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group block"
+              >
+                {media}
+                {caption}
+              </a>
+            ) : (
+              <>
+                {media}
+                {caption}
+              </>
+            )}
+          </figure>
+        );
+      })}
     </div>
   );
 }
