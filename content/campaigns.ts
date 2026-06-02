@@ -299,17 +299,18 @@ export const campaigns: Campaign[] = [
         ],
       },
       {
-        kicker: "The idea",
-        title: "Built better, so you can build better.",
-        body: "Every chain recites the same vocabulary: decentralized, scalable, interoperable, fast. So the campaign stopped competing on the spec sheet and claimed the underdog seat out loud. Stellar smart contracts were built different, with real-world use cases, Rust and WASM underneath, and an ecosystem that answered when a builder got stuck. The wordplay across build, built, and better gave developers a line they would actually repeat.",
-        pullQuote: "Built different, so you can build better.",
+        kicker: "The strategy",
+        title: "Proof, not promises.",
+        body: "Every chain recites the same vocabulary: decentralized, scalable, interoperable, fast. Developers had heard all of it, so another tagline was never going to move them. What moves a developer is proof, real builders shipping real things, and seeing the people they trust already there. So Build Better took the underdog seat and made the case the way developers actually evaluate a network. Lead with real-world use, show the technical substance in the open, and seed it so the ecosystem would carry the message instead of a media budget. The film below set the terms, and everything after it was evidence.",
+        pullQuote: "Built better, so you can build better.",
+        tweetId: "1897748002480984218",
         band: "blue",
       },
       {
         kicker: "The proof",
-        title: "The content did the convincing.",
-        body: "A launch announcement would have bounced off this audience, so I built a season of organic content a developer could actually use. A hype film on the design principles, a blog series going deep on sustainability, performance, and security, Soroban 101 explainers, an interactive map of Stellar's real-world payment rails across 180+ countries, and live Twitter Spaces and dev takeovers where builders, including a Solana co-founder, worked through the tradeoffs in public. The Decaf case study put a face on all of it: a real merchant in Latin America, a real problem, solved on Stellar.",
-        tweetId: "1897748002480984218",
+        title: "Show it working in the real world.",
+        body: "The strongest proof was a real business. Decaf is a payments app built on Stellar that lets people across Latin America spend crypto at everyday shops. As Juliana says in the case study, there is a necessity for this, because the world is changing and people cannot be left behind. One merchant solving one real problem did more for the built better claim than any benchmark, which is why the case study led the season. Around it ran the rest of the content engine: a blog series on sustainability, performance, and security, Soroban 101 explainers, live Twitter Spaces and dev takeovers including a Solana co-founder, and an interactive map of Stellar's payment rails across 180+ countries.",
+        tweetId: "1859294165118431292",
         gallery: [
           {
             title: "The blog series",
@@ -317,8 +318,8 @@ export const campaigns: Campaign[] = [
             tones: ["#0f1a14", "#5ef2a0"],
           },
           {
-            title: "Decaf case study",
-            caption: "Real-world impact: a Latin American merchant, solved on Stellar.",
+            title: "Soroban 101",
+            caption: "Explainers that made the platform legible to newcomers.",
             tones: ["#13233a", "#5ef2a0"],
           },
           {
@@ -334,14 +335,12 @@ export const campaigns: Campaign[] = [
         ],
       },
       {
-        kicker: "The reception",
-        title: "The work traveled on its own.",
-        body: "The pull came from the content, not the ad budget. The awareness film cleared a million views, organic search climbed 34% from where it started, and the Decaf case study found an audience well past the usual crypto circles. The clearest signal was the hashtag. #BetterOnStellar moved from mostly official accounts to mostly developers using it themselves, growing from 70% to 88% non-official as the season ran, from the CTO making the security case to projects and builders posting their own work under the tag.",
+        kicker: "The community",
+        title: "Then it spread on its own.",
+        body: "The pull came from the content, not the ad budget. The awareness film cleared a million views, organic search climbed 34% from where it started, and #BetterOnStellar shifted from mostly official accounts to mostly developers and projects using it themselves, from 70% to 88% non-official across the season. The hashtag became the throughline, from a Build Better workshop in Prague to builders vouching for the chain in their own words.",
         band: "paper-2",
         tweetIds: [
           "1869830936315183244", // Build Better Workshop, Prague (Dec 2024)
-          "1823791683412353243", // SDF CTO Nicolas Barry on security (Aug 2024)
-          "1859294165118431292", // Decaf real-world impact, Juliana (Nov 2024)
           "1900188926419099767", // "no one does it better than Stellar" (Mar 2025)
         ],
       },
