@@ -181,24 +181,46 @@ function Spotlight() {
         <div className="grid gap-2 md:grid-cols-3 md:gap-3">
           {hits.map((h, i) => {
             const card = (
-              <div className="flex h-full flex-col border border-line bg-card p-4 transition-colors group-hover:border-orange">
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display italic text-sm text-ink-3">
-                    {h.number}.
-                  </span>
-                  <h3 className="font-display italic leading-tight text-ink text-base md:text-lg">
-                    {h.title}
-                  </h3>
+              <div className="flex h-full flex-col overflow-hidden border border-line bg-card transition-colors group-hover:border-orange">
+                <div
+                  className="relative aspect-[16/10] w-full overflow-hidden"
+                  style={
+                    !h.image && h.tones
+                      ? {
+                          background: `linear-gradient(135deg, ${h.tones[0]} 0%, ${h.tones[1]} 100%)`,
+                        }
+                      : undefined
+                  }
+                >
+                  {h.image && (
+                    <Image
+                      src={h.image}
+                      alt={h.title}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    />
+                  )}
                 </div>
-                <p className="mt-2 text-xs leading-relaxed text-ink-2 md:text-sm">
-                  {h.body}
-                </p>
-                {h.href && (
-                  <span className="mt-3 inline-flex items-baseline gap-1 self-start font-display text-xs leading-tight text-ink-2 transition-colors group-hover:text-orange md:text-sm">
-                    {h.linkLabel ?? "View"}
-                    <span className="italic text-orange">↗︎</span>
-                  </span>
-                )}
+                <div className="flex flex-1 flex-col p-4">
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-display italic text-sm text-ink-3">
+                      {h.number}.
+                    </span>
+                    <h3 className="font-display italic leading-tight text-ink text-base md:text-lg">
+                      {h.title}
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-xs leading-relaxed text-ink-2 md:text-sm">
+                    {h.body}
+                  </p>
+                  {h.href && (
+                    <span className="mt-3 inline-flex items-baseline gap-1 self-start font-display text-xs leading-tight text-ink-2 transition-colors group-hover:text-orange md:text-sm">
+                      {h.linkLabel ?? "View"}
+                      <span className="italic text-orange">↗︎</span>
+                    </span>
+                  )}
+                </div>
               </div>
             );
 
