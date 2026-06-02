@@ -110,6 +110,8 @@ export default async function CampaignPage({
               <div className="mx-auto max-w-5xl">
                 <VideoEmbed src={campaign.heroVideo} title={campaign.title} />
               </div>
+            ) : campaign.heroTweetId ? (
+              <TweetEmbed id={campaign.heroTweetId} className="w-full" />
             ) : campaign.heroImage ? (
               <div className="aspect-[16/9] w-full overflow-hidden rounded-sm ring-1 ring-line">
                 <Image

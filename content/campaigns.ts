@@ -30,6 +30,8 @@ export type Campaign = {
   tones: [string, string];
   heroImage?: string;
   heroVideo?: string;
+  /** X/Twitter post used as the hero (its video plays in the card). */
+  heroTweetId?: string;
 };
 
 export type WritingItem = {
@@ -289,6 +291,7 @@ export const campaigns: Campaign[] = [
     summary:
       "The go-to-market campaign that launched Soroban, Stellar's smart contracts platform, to developers who were already building somewhere else.",
     tones: ["#0f1a14", "#5ef2a0"], // terminal dark → built-better green
+    heroTweetId: "1869830936315183244", // Build Better Workshop, Prague — header video
     sections: [
       {
         kicker: "The setup",
@@ -352,10 +355,7 @@ export const campaigns: Campaign[] = [
         title: "Then it spread on its own.",
         body: "The pull came from the content, not the ad budget. The awareness film cleared a million views, organic search climbed 34% from where it started, and #BetterOnStellar shifted from mostly official accounts to mostly developers and projects using it themselves, from 70% to 88% non-official across the season. The hashtag became the throughline, from a Build Better workshop in Prague to builders vouching for the chain in their own words.",
         band: "paper-2",
-        tweetIds: [
-          "1869830936315183244", // Build Better Workshop, Prague (Dec 2024)
-          "1900188926419099767", // "no one does it better than Stellar" (Mar 2025)
-        ],
+        tweetId: "1900188926419099767", // "no one does it better than Stellar" (Mar 2025)
       },
     ],
     outcomes: [
