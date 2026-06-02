@@ -289,14 +289,14 @@ export const campaigns: Campaign[] = [
     client: "Stellar",
     tagline: "Built better, so you can build better.",
     summary:
-      "The go-to-market campaign that launched Soroban, Stellar's smart contracts platform, to developers who were already building somewhere else.",
+      "The campaign that launched Soroban, Stellar's smart contracts platform, to developers who were already building on other chains.",
     tones: ["#0f1a14", "#5ef2a0"], // terminal dark → built-better green
     heroImage: "/campaigns/build-better/build-better-key-art.png", // "Build Better on Stellar" key art
     sections: [
       {
         kicker: "The setup",
-        title: "A new platform, and an audience that wasn't waiting for it.",
-        body: "Soroban was Stellar's move into smart contracts, the capability the network had never had. The hard part was never the technology. The developers we wanted were already deep in Ethereum and Solana, with their tooling and their habits set, and most of them had filed Stellar under payments years ago. Build Better existed to change that filing.",
+        title: "The audience had heard every pitch.",
+        body: "Soroban was Stellar's first move into smart contracts, and the technology held up. The real challenge was the audience, since the developers we wanted were already building on Ethereum and Solana, with their tools and habits set, and most of them thought of Stellar as a payments network and nothing more. Build Better had to change how they saw it.",
         stats: [
           { label: "Platform", value: "Soroban smart contracts" },
           { label: "Audience", value: "Devs already building on other chains" },
@@ -305,16 +305,16 @@ export const campaigns: Campaign[] = [
       },
       {
         kicker: "The strategy",
-        title: "Proof, not promises.",
-        body: "Every chain recites the same vocabulary: decentralized, scalable, interoperable, fast. Developers had heard all of it, so another tagline was never going to move them. What moves a developer is proof, real builders shipping real things, and seeing the people they trust already there. So Build Better took the underdog seat and made the case the way developers actually evaluate a network. Lead with real-world use, show the technical substance in the open, and seed it so the ecosystem would carry the message instead of a media budget. The film below set the terms, and everything after it was evidence.",
+        title: "The work made the argument.",
+        body: "Every chain says the same things: fast, scalable, secure, decentralized. Developers had heard all of it, so one more tagline was not going to win them over. They trust proof and they trust each other, so we built the campaign around both. We showed real projects using Soroban, explained the technology in the open, and gave people something worth sharing, so the message could travel without a media budget. The film below laid out the idea, and the rest of the campaign backed it up.",
         pullQuote: "Built better, so you can build better.",
         tweetId: "1897748002480984218",
         band: "blue",
       },
       {
         kicker: "The proof",
-        title: "Show it working in the real world.",
-        body: "The strongest proof was a real business. Decaf is a payments app built on Stellar that lets people across Latin America spend crypto at everyday shops. As Juliana says in the case study, there is a necessity for this, because the world is changing and people cannot be left behind. One merchant solving one real problem did more for the built better claim than any benchmark, which is why the case study led the season. Around it ran the rest of the content engine: a blog series on sustainability, performance, and security, Soroban 101 explainers, live Twitter Spaces and dev takeovers including a Solana co-founder, and an interactive map of Stellar's payment rails across 180+ countries.",
+        title: "The proof was a real business.",
+        body: "Decaf is a payments app built on Stellar that lets people across Latin America spend crypto at everyday shops. In the case study, Juliana explains why it matters: the world is changing, and people cannot be left behind. A real merchant solving a real problem was more convincing than any benchmark, so the case study led the season. The rest of the work supported it: a blog series on sustainability, performance, and security, Soroban 101 explainers, live Twitter Spaces and dev takeovers with a Solana co-founder, and an interactive map of Stellar's payment rails across more than 180 countries.",
         tweetId: "1859294165118431292",
         gallery: [
           {
@@ -343,7 +343,7 @@ export const campaigns: Campaign[] = [
       {
         kicker: "Building in public",
         title: "One explainer pulled in a Solana co-founder.",
-        body: "Garand Tyson set the record straight on state bloat, walking through how Stellar uses State Archival to handle on-chain spam and unused data. The clip did exactly what building in public is supposed to do. It reached the people who would argue with it. Anatoly Yakovenko, co-founder of Solana, engaged, and within two weeks the two of them were on a live X Space with Tomer Weller, debating solutions to state bloat in the open. No media buy made that happen. The explainer did.",
+        body: "Garand Tyson made a short video explaining how Stellar handles state bloat, using State Archival to clear on-chain spam and unused data. It reached exactly the people who would push back on it. Anatoly Yakovenko, co-founder of Solana, weighed in, and two weeks later he was on a live X Space with Garand and Tomer Weller, working through how to solve state bloat in the open. That debate came straight from the content we published.",
         band: "lime",
         tweetIds: [
           "1813633045280469471", // Garand Tyson State Archival explainer (Jul 17 2024)
@@ -352,8 +352,8 @@ export const campaigns: Campaign[] = [
       },
       {
         kicker: "The community",
-        title: "Then it spread on its own.",
-        body: "The pull came from the content, not the ad budget. The awareness film cleared a million views, organic search climbed 34% from where it started, and #BetterOnStellar shifted from mostly official accounts to mostly developers and projects using it themselves, from 70% to 88% non-official across the season. The hashtag became the throughline, from a Build Better workshop in Prague to builders vouching for the chain in their own words.",
+        title: "Developers carried it from there.",
+        body: "The results came from the content itself. The awareness film passed a million views, organic search grew 34% from where it started, and #BetterOnStellar moved from mostly official accounts to developers and projects using it themselves, climbing from 70% to 88% non-official over the season. By the end, the people building on Stellar were the ones spreading the message, from a Build Better workshop in Prague to builders recommending the chain in their own words.",
         band: "paper-2",
         tweetIds: [
           "1869830936315183244", // Build Better Workshop, Prague (Dec 2024)
