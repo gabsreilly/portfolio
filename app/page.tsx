@@ -174,7 +174,7 @@ function Spotlight() {
         <div className="mb-3 flex items-center gap-3 md:mb-4">
           <span className="font-display italic text-lg text-ink md:text-xl">I.</span>
           <span className="label" style={{ color: "var(--ink)" }}>
-            My favorite hits
+            The short list
           </span>
         </div>
 
