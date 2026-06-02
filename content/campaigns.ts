@@ -338,6 +338,16 @@ export const campaigns: Campaign[] = [
         ],
       },
       {
+        kicker: "Building in public",
+        title: "One explainer pulled in a Solana co-founder.",
+        body: "Garand Tyson set the record straight on state bloat, walking through how Stellar uses State Archival to handle on-chain spam and unused data. The clip did exactly what building in public is supposed to do. It reached the people who would argue with it. Anatoly Yakovenko, co-founder of Solana, engaged, and within two weeks the two of them were on a live X Space with Tomer Weller, debating solutions to state bloat in the open. No media buy made that happen. The explainer did.",
+        band: "lime",
+        tweetIds: [
+          "1813633045280469471", // Garand Tyson State Archival explainer (Jul 17 2024)
+          "1817972133852840170", // Industry Perspectives live X Space w/ Anatoly (Jul 29 2024)
+        ],
+      },
+      {
         kicker: "The community",
         title: "Then it spread on its own.",
         body: "The pull came from the content, not the ad budget. The awareness film cleared a million views, organic search climbed 34% from where it started, and #BetterOnStellar shifted from mostly official accounts to mostly developers and projects using it themselves, from 70% to 88% non-official across the season. The hashtag became the throughline, from a Build Better workshop in Prague to builders vouching for the chain in their own words.",
