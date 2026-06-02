@@ -341,6 +341,7 @@ export const campaigns: Campaign[] = [
         tweetIds: [
           "1869830936315183244", // Build Better Workshop, Prague (Dec 2024)
           "1823791683412353243", // SDF CTO Nicolas Barry on security (Aug 2024)
+          "1859294165118431292", // Decaf real-world impact, Juliana (Nov 2024)
           "1900188926419099767", // "no one does it better than Stellar" (Mar 2025)
         ],
       },
