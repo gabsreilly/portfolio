@@ -85,6 +85,20 @@ export default async function CampaignPage({
                   {campaign.summary}
                 </p>
               </Reveal>
+              {campaign.outcomes && campaign.outcomes.length >= 3 && (
+                <Reveal delay={440}>
+                  <dl className="mt-10 grid grid-cols-1 gap-6 border-t border-line pt-6 sm:grid-cols-3 md:mt-12 md:gap-8">
+                    {campaign.outcomes.slice(0, 3).map((o) => (
+                      <div key={o.label}>
+                        <dd className="font-display display-bold text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1] tracking-[-0.02em]">
+                          {o.value}
+                        </dd>
+                        <dt className="label mt-2">{o.label}</dt>
+                      </div>
+                    ))}
+                  </dl>
+                </Reveal>
+              )}
             </div>
           </div>
         </section>
