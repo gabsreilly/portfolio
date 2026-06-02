@@ -273,6 +273,79 @@ export const campaigns: Campaign[] = [
       },
     ],
   },
+  {
+    slug: "build-better",
+    parentSlug: "stellar-enterprise-content",
+    title: "Build Better",
+    year: "2024",
+    client: "Stellar",
+    tagline: "Built better, so you can build better.",
+    summary:
+      "The go-to-market campaign that launched Soroban, Stellar's smart contracts platform, to developers who were already building somewhere else.",
+    tones: ["#0f1a14", "#5ef2a0"], // terminal dark → built-better green
+    sections: [
+      {
+        kicker: "The setup",
+        title: "A new platform, and an audience that wasn't waiting for it.",
+        body: "Soroban was Stellar's move into smart contracts, the capability the network had never had. The hard part was never the technology. The developers we wanted were already deep in Ethereum and Solana, with their tooling and their habits set, and most of them had filed Stellar under payments years ago. Build Better existed to change that filing.",
+        stats: [
+          { label: "Platform", value: "Soroban smart contracts" },
+          { label: "Audience", value: "Devs already building on other chains" },
+          { label: "Launch", value: "Jul 2024" },
+        ],
+      },
+      {
+        kicker: "The idea",
+        title: "Built better, so you can build better.",
+        body: "Every chain recites the same vocabulary: decentralized, scalable, interoperable, fast. So the campaign stopped competing on the spec sheet and claimed the underdog seat out loud. Stellar smart contracts were built different, with real-world use cases, Rust and WASM underneath, and an ecosystem that answered when a builder got stuck. The wordplay across build, built, and better gave developers a line they would actually repeat.",
+        pullQuote: "Built different, so you can build better.",
+        band: "blue",
+      },
+      {
+        kicker: "The proof",
+        title: "Show the work, skip the pitch.",
+        body: "A launch video and a press release would have bounced off this audience. Build Better ran instead as a stream of evidence a developer could check: short films on performance, security, and sustainability, founder testimonials from projects already live on mainnet, and a $50K Dev.to hackathon that turned curiosity into commits. The boldest swing was the Build This Better Booth, where non-technical storytellers pitched what they wanted built better and a panel that included Idris Elba sent the strongest ideas to developer teams, closing at Meridian.",
+        gallery: [
+          {
+            title: "Design principles",
+            caption: "Short films on performance, security, and sustainability.",
+            tones: ["#0f1a14", "#5ef2a0"],
+          },
+          {
+            title: "Founder testimonials",
+            caption: "Builders already shipping on Soroban mainnet.",
+            tones: ["#13233a", "#5ef2a0"],
+          },
+          {
+            title: "Dev.to hackathon",
+            caption: "$50K in awards. 97 submissions by close.",
+            tones: ["#1a1714", "#7c9cff"],
+          },
+          {
+            title: "Build This Better Booth",
+            caption: "Idris Elba on the judging panel, winners demoed at Meridian.",
+            tones: ["#0f1a14", "#f8d63e"],
+          },
+        ],
+      },
+      {
+        kicker: "The reception",
+        title: "Developers showed up, and kept building.",
+        body: "The campaign moved the metrics that matter for a developer launch. The Dev.to hackathon closed with 97 submissions and two winners demoing at Meridian. Awareness videos cleared a million views on their own merit, organic search climbed week over week, and the community tag #BetterOnStellar shifted from mostly official accounts to mostly the developers themselves.",
+        band: "paper-2",
+      },
+    ],
+    outcomes: [
+      { label: "Hackathon submissions",           value: "97" },
+      { label: "Hackathon prize pool",            value: "$50K+" },
+      { label: "Awareness video views",           value: "1M+" },
+      { label: "New Discord members (Q3)",        value: "+1,438" },
+      { label: "New CRM contacts (Q3)",           value: "+987" },
+      { label: "Avg tutorial watch time",         value: "3:06" },
+      { label: "In-stream ad CTR (peak)",         value: "50.4%" },
+      { label: "#BetterOnStellar (non-official)", value: "70% → 88%" },
+    ],
+  },
 ];
 
 export function getCampaign(slug: string) {

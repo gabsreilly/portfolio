@@ -69,7 +69,7 @@ export const projects: Project[] = [
       { label: "Partners during tenure",                  value: "PayPal · Visa · MoneyGram · Franklin Templeton · U.S. Bank" },
     ],
     tones: ["#494c2d", "#1f2014"],
-    campaigns: ["stable-summer"],
+    campaigns: ["stable-summer", "build-better"],
   },
   {
     slug: "stellar-social-ecosystem",
