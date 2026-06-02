@@ -46,9 +46,12 @@ function loadWidgets(): Promise<void> {
 export function TweetEmbed({
   id,
   theme = "light",
+  className = "mt-8 w-full",
 }: {
   id: string;
   theme?: "light" | "dark";
+  /** Wrapper classes. Defaults to a top-margined full-width block. */
+  className?: string;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [ready, setReady] = useState(false);
@@ -75,11 +78,38 @@ export function TweetEmbed({
   }, [id, theme]);
 
   return (
-    <div className="mt-8 w-full">
+    <div className={className}>
       <div ref={ref} className="mx-auto w-full max-w-[550px] [&_iframe]:!mx-auto" />
       {!ready && (
         <div className="mx-auto h-72 w-full max-w-[550px] animate-pulse rounded-sm bg-ink/[0.06] ring-1 ring-line" />
       )}
+    </div>
+  );
+}
+
+/**
+ * TweetWall — a responsive masonry of tweet cards. One column on mobile,
+ * two on wider screens. CSS columns let variable-height cards pack
+ * without leaving a half-empty grid row.
+ */
+export function TweetWall({
+  ids,
+  theme = "light",
+}: {
+  ids: string[];
+  theme?: "light" | "dark";
+}) {
+  if (!ids?.length) return null;
+  return (
+    <div className="mt-8 columns-1 gap-6 lg:columns-2">
+      {ids.map((id) => (
+        <TweetEmbed
+          key={id}
+          id={id}
+          theme={theme}
+          className="mb-6 w-full break-inside-avoid"
+        />
+      ))}
     </div>
   );
 }

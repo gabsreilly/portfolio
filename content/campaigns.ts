@@ -51,8 +51,10 @@ export type CampaignSection = {
   stats?: { label: string; value: string }[];
   /** Italic pull quote rendered with editorial weight. */
   pullQuote?: string;
-  /** Embedded X / Twitter post by status id (renders the official card). */
+  /** Embedded X / Twitter post by status id (renders one centered card). */
   tweetId?: string;
+  /** Multiple X / Twitter posts rendered as a masonry tweet wall. */
+  tweetIds?: string[];
   /** Image/video grid. Each item renders as a tile. */
   gallery?: GalleryItem[];
   /** Earned social proof — screenshots + engagement metrics. */
@@ -334,8 +336,13 @@ export const campaigns: Campaign[] = [
       {
         kicker: "The reception",
         title: "Developers showed up, and kept building.",
-        body: "The campaign moved the metrics that matter for a developer launch. The Dev.to hackathon closed with 97 submissions and two winners demoing at Meridian. Awareness videos cleared a million views on their own merit, organic search climbed week over week, and the community tag #BetterOnStellar shifted from mostly official accounts to mostly the developers themselves.",
+        body: "The campaign moved the metrics that matter for a developer launch. The Dev.to hackathon closed with 97 submissions and two winners demoing at Meridian, awareness videos cleared a million views on their own merit, and organic search climbed week over week. #BetterOnStellar carried the message across the season, from the CTO making the security case to the Build Better workshop in Prague, and over time the tag shifted from mostly official accounts to mostly developers using it themselves.",
         band: "paper-2",
+        tweetIds: [
+          "1869830936315183244", // Build Better Workshop, Prague (Dec 2024)
+          "1823791683412353243", // SDF CTO Nicolas Barry on security (Aug 2024)
+          "1900188926419099767", // "no one does it better than Stellar" (Mar 2025)
+        ],
       },
     ],
     outcomes: [

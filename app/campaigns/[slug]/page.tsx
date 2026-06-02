@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { VideoEmbed } from "@/components/video-embed";
-import { TweetEmbed } from "@/components/tweet-embed";
+import { TweetEmbed, TweetWall } from "@/components/tweet-embed";
 import { campaigns, getCampaign } from "@/content/campaigns";
 import { getProject } from "@/content/projects";
 import type { GalleryItem, ReactionItem } from "@/content/campaigns";
@@ -187,6 +187,11 @@ export default async function CampaignPage({
                       {s.tweetId && (
                         <Reveal delay={460}>
                           <TweetEmbed id={s.tweetId} />
+                        </Reveal>
+                      )}
+                      {s.tweetIds && s.tweetIds.length > 0 && (
+                        <Reveal delay={460}>
+                          <TweetWall ids={s.tweetIds} />
                         </Reveal>
                       )}
                       {s.gallery && s.gallery.length > 0 && (
