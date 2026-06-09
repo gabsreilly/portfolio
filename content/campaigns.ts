@@ -292,7 +292,7 @@ export const campaigns: Campaign[] = [
         gallery: [
           {
             title: "Build Better Challenge",
-            caption: "An open call for builders to ship real projects on Soroban.",
+            caption: "A Dev.to-hosted hackathon that drew 200+ applications competing for over $50K in awards. Judges weighed entries across categories built to give ambitious builders a launchpad for projects that push Web3 forward.",
             href: "https://stellar.org/community/build-better-challenge",
             tones: ["#13233a", "#5ef2a0"],
           },
