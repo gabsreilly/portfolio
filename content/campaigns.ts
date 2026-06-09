@@ -290,25 +290,10 @@ export const campaigns: Campaign[] = [
         tweetId: "1859294165118431292",
         gallery: [
           {
-            title: "The blog series",
-            caption: "Deep dives on sustainability, performance, and security.",
-            tones: ["#0f1a14", "#5ef2a0"],
-          },
-          {
             title: "Build Better Challenge",
             caption: "An open call for builders to ship real projects on Soroban.",
             href: "https://stellar.org/community/build-better-challenge",
             tones: ["#13233a", "#5ef2a0"],
-          },
-          {
-            title: "Live with the builders",
-            caption: "Twitter Spaces and dev takeovers, including a Solana co-founder.",
-            tones: ["#1a1714", "#7c9cff"],
-          },
-          {
-            title: "Interactive ramps map",
-            caption: "Stellar's on and off ramps mapped across 180+ countries.",
-            tones: ["#0f1a14", "#f8d63e"],
           },
         ],
       },
