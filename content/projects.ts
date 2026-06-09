@@ -51,8 +51,8 @@ export const projects: Project[] = [
       { label: "Format",                               value: "Video + audio, in-house studio" },
     ],
     tones: ["#2a2722", "#5b5448"],
-    heroTweetId: "2011533350344016078",
-    tweetIds: ["2001032073940009162"],
+    video: "/work/sdf-studio-podcast/airtm-block-by-block.mp4",
+    tweetIds: ["2011533350344016078", "2001032073940009162"],
   },
   {
     slug: "stellar-enterprise-content",
