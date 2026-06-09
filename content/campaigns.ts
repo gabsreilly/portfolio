@@ -108,8 +108,7 @@ export const campaigns: Campaign[] = [
     summary:
       "A season-long campaign for Stellar's biggest position: crypto you can trust.",
     tones: ["#b8a8e8", "#f8d63e"], // Stable Summer brand: lavender → yellow
-    heroVideo: "https://vimeo.com/1196776535",
-    heroImage: "/campaigns/stable-summer/fwbfest-stage-takeover.png",
+    heroTweetId: "1940120775429632373", // Cannes — Denelle & Tomer, "stability over volatility"
     sections: [
       {
         kicker: "The setup",
@@ -120,6 +119,7 @@ export const campaigns: Campaign[] = [
           { label: "First federal stablecoin law (GENIUS Act)", value: "Jun 2025" },
           { label: "Circle IPO valuation", value: "$6.9B" },
         ],
+        tweetId: "1945935418580414502", // GENIUS Act passed — Stellar, Jul 17 2025
       },
       {
         kicker: "The idea",
@@ -136,44 +136,16 @@ export const campaigns: Campaign[] = [
         kicker: "The activations",
         title: "Captured the culture. Prioritized the content.",
         body: "The activations were seeds we planted months in advance. Stable Summer ran across IRL, OOH, social, and developer surfaces. Every touchpoint reinforced the same core message in a different register, and each one earned its own piece of the season's momentum.",
-        gallery: [
-          {
-            title: "What 'Stable' stood for.",
-            caption: "Stellar's Jul 14 tweet — six pillars in one acronym.",
-            image: "/campaigns/stable-summer/stable-acronym-tweet.png",
-            tones: ["#1a1714", "#b8a8e8"],
-          },
-          {
-            title: "FWB Fest, main stage",
-            caption: "Main-stage takeover — \"Stable Summer Starts Here.\"",
-            image: "/campaigns/stable-summer/fwbfest-stage-takeover.png",
-            tones: ["#f8d63e", "#1a1714"],
-          },
-          {
-            title: "Out-of-home",
-            caption: "Installations across major European travel hubs.",
-            video: "https://vimeo.com/1196778227",
-            tones: ["#9088c8", "#f8d63e"],
-          },
-          {
-            title: "Day one in Cannes",
-            caption: "Stable Summer kicked off at Stable Summit during EthCC week.",
-            image: "/campaigns/stable-summer/cannes-happy-hour.png",
-            tones: ["#b8a8e8", "#f8d63e"],
-          },
-          {
-            title: "Owning every stop",
-            caption: "Denelle Dixon on stage at Stable Summit with Société Générale-FORGE.",
-            image: "/campaigns/stable-summer/stable-summit-denelle-panel.png",
-            tones: ["#1a1714", "#b8a8e8"],
-          },
-          {
-            title: "Girls Gone Stable",
-            caption: "Custom merch in the right Cannes scenes — picked up and reshared across the season (see the reception below).",
-            image: "/campaigns/stable-summer/girls-gone-stable-cannes.png",
-            tones: ["#b8a8e8", "#f8d63e"],
-          },
+        tweetIds: [
+          "1951344255781539977", // FWB Fest takeover (errnsterr, Aug 1)
+          "1938624727800541667", // OOH — "touch down on solid ground" (Stellar, Jun 27)
         ],
+      },
+      {
+        kicker: "Media outreach",
+        title: "The press carried it too.",
+        body: "The story traveled past our own channels. CoinDesk sat down with Denelle Dixon to walk through how stablecoins, cross-border payments, and remittances had gotten to this point, which put Stellar's read on the moment in front of the industry's core audience.",
+        tweetId: "1932883868719239293", // CoinDesk — Denelle interview, Jun 11
       },
       {
         kicker: "The reception",

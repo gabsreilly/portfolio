@@ -5,6 +5,7 @@ import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { VideoEmbed } from "@/components/video-embed";
+import { TweetEmbed, TweetWall } from "@/components/tweet-embed";
 import { projects, getProject } from "@/content/projects";
 import { getCampaignsForProject } from "@/content/campaigns";
 
@@ -77,7 +78,9 @@ export default async function WorkPage({
         {/* Hero — video if available, else a tonal tile */}
         <Reveal>
           <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-            {project.video ? (
+            {project.heroTweetId ? (
+              <TweetEmbed id={project.heroTweetId} className="w-full" />
+            ) : project.video ? (
               <VideoEmbed
                 src={project.video}
                 title={project.title}
@@ -124,6 +127,22 @@ export default async function WorkPage({
                     {project.body[0]}
                   </p>
                 </Reveal>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* From the show — tweet wall */}
+        {project.tweetIds && project.tweetIds.length > 0 && (
+          <section className="mx-auto max-w-[1400px] px-6 pt-20 md:px-10 md:pt-24">
+            <div className="grid gap-8 md:grid-cols-12 md:gap-10">
+              <div className="md:col-span-3">
+                <Reveal>
+                  <span className="label">From the show</span>
+                </Reveal>
+              </div>
+              <div className="md:col-span-9">
+                <TweetWall ids={project.tweetIds} />
               </div>
             </div>
           </section>

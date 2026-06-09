@@ -20,6 +20,10 @@ export type Project = {
   video?: string;
   /** Optional CSS aspect-ratio for the video (defaults to 16/9). */
   videoRatio?: string;
+  /** Optional X/Twitter post id used as the hero (renders the tweet card). */
+  heroTweetId?: string;
+  /** Optional X/Twitter post ids rendered as a tweet wall in the body. */
+  tweetIds?: string[];
   tones: [string, string];
   metrics?: { label: string; value: string }[];
   link?: { label: string; href: string };
@@ -41,14 +45,14 @@ export const projects: Project[] = [
       "I built the SDF podcast into an in-house studio: cameras, lighting, audio treatment, edit pipeline, the works. We now record video and audio in the same session, which means every episode produces multiple reusable assets across blog, social, and email instead of one buried audio file. The deeper bet underneath the whole thing is that production value is the new credibility signal in a feed where most B2B podcasts sound like LLMs interviewing LLMs.",
     ],
     metrics: [
-      { label: "Format",      value: "Video + audio, in-house studio" },
-      { label: "Production",  value: "Concept through edit, owned end-to-end" },
-      { label: "Per session", value: "Multiple reusable assets (blog, social, email)" },
-      { label: "Why now",     value: "Production value as the new signal of seriousness" },
+      { label: "Top episode (X)",                      value: "1.4M views" },
+      { label: "Spotify listens (latest)",             value: "26K · +309%" },
+      { label: "Earned impressions (full-cycle plan)", value: "3M+ across channels" },
+      { label: "Format",                               value: "Video + audio, in-house studio" },
     ],
     tones: ["#2a2722", "#5b5448"],
-    video: "https://vimeo.com/1196145642",
-    videoRatio: "4/3",
+    heroTweetId: "2011533350344016078",
+    tweetIds: ["2001032073940009162"],
   },
   {
     slug: "stellar-enterprise-content",
