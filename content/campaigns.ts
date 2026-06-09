@@ -288,6 +288,7 @@ export const campaigns: Campaign[] = [
         title: "Decaf showed Soroban working in the real world.",
         body: "Decaf is a payments app built on Stellar that lets people across Latin America spend crypto at everyday shops. In the case study, Juliana explains why it matters: the world is changing, and people cannot be left behind. A real merchant solving a real problem was more convincing than any benchmark, so the case study led the season. The rest of the work supported it: a blog series on sustainability, performance, and security, Soroban 101 explainers, live Twitter Spaces and dev takeovers with a Solana co-founder, and an interactive map of Stellar's payment rails across more than 180 countries.",
         tweetId: "1859294165118431292",
+        tweetIds: ["1823791683412353243"], // SDF CTO Nicolas Barry — "build safer", #BetterOnStellar
         gallery: [
           {
             title: "Build Better Challenge",
