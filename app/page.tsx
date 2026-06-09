@@ -5,6 +5,7 @@ import { WorkIndex } from "@/components/work-index";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { NowLine } from "@/components/now-line";
+import { AboutPanel } from "@/components/about-panel";
 import { projects } from "@/content/projects";
 import { about } from "@/content/about";
 import { hits } from "@/content/hits";
@@ -15,9 +16,9 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
+        <AboutPanel paragraphs={about.paragraphs} />
         <Spotlight />
         <Work />
-        <About />
         <Ethos />
         <MoreRooms />
       </main>
@@ -105,7 +106,7 @@ function Ethos() {
     >
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-3 flex items-center gap-3 md:mb-4">
-          <span className="font-display italic text-lg text-ink md:text-xl">IV.</span>
+          <span className="font-display italic text-lg text-ink md:text-xl">III.</span>
           <span className="label" style={{ color: "var(--ink)" }}>
             What guides me
           </span>
@@ -169,7 +170,7 @@ function Spotlight() {
   if (hits.length === 0) return null;
 
   return (
-    <section id="spotlight" className="bg-lime px-6 py-6 md:px-10 md:py-8">
+    <section id="spotlight" className="bg-paper px-6 py-6 md:px-10 md:py-8">
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-3 flex items-center gap-3 md:mb-4">
           <span className="font-display italic text-lg text-ink md:text-xl">I.</span>
@@ -271,45 +272,6 @@ function MoreRooms() {
                   {r.tag}
                 </span>
               </Link>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────────────────────
-   About — paper background, compressed bio + epigraph.
-   ───────────────────────────────────────────────────────────── */
-function About() {
-  return (
-    <section
-      id="about"
-      className="mx-auto max-w-[1400px] px-6 pt-20 pb-16 md:px-10 md:pt-28 md:pb-24"
-    >
-      <div className="grid gap-10 md:grid-cols-12 md:gap-16">
-        <div className="md:col-span-3">
-          <Reveal>
-            <div className="flex items-center gap-3">
-              <span className="font-display italic text-2xl text-ink-3">III.</span>
-              <span className="label">About me</span>
-            </div>
-          </Reveal>
-        </div>
-
-        <div className="md:col-span-9">
-          <Reveal>
-            <p className="mb-10 max-w-3xl border-l-2 border-line pl-6 font-display text-2xl italic leading-snug text-ink-2 md:mb-14 md:text-3xl">
-              &ldquo;{about.tagline}&rdquo;
-            </p>
-          </Reveal>
-
-          {about.paragraphs.map((p, i) => (
-            <Reveal key={i} delay={i * 70}>
-              <p className="mb-6 max-w-2xl text-lg leading-relaxed text-ink md:text-xl md:leading-[1.55]">
-                {p}
-              </p>
             </Reveal>
           ))}
         </div>

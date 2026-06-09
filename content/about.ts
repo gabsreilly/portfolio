@@ -15,7 +15,7 @@
 export const about = {
   name: "Gabriella O'Reilly",
   tagline:
-    "Translator of tech-jargon, online-speak, and stories that matter.",
+    "You can't keep an audience you never understood.",
 
   // Hero positioning — broader than her current B2B job title.
   roleLine: "Marketing & Creative Communications",
@@ -25,10 +25,11 @@ export const about = {
     "I lead enterprise content at Stellar, the open blockchain moving about $55B a year for institutions like PayPal, Visa, MoneyGram, and Franklin Templeton.",
 
   paragraphs: [
-    "I'm Gabriella. I lead enterprise content at Stellar, the open blockchain moving about $55B a year for PayPal, Visa, MoneyGram, and Franklin Templeton.",
-    "Before Stellar I ran social at Nordstrom and demand gen at Imperva. My work has spanned B2C and B2B. The discipline is the same: figure out what the audience cares about, then translate the work into language that earns their attention.",
-    "I think about marketing as full funnel. Culture moments at the top, narrative infrastructure in the middle, conversion at the bottom. What I bring is the cultural read: what people are paying attention to, before the rest of the industry catches up. Stable Summer is the cleanest example. Built for institutional buyers, it traveled through Cannes, FWB Fest, and the right corners of crypto culture.",
-    "On the side I run The Exposure Project, a publication about OCD and anxiety. I write some of it; readers send in the rest.",
+    "I'm Gabriella. I lead enterprise content at Stellar, the payments network moving about $55B a year for PayPal, Visa, MoneyGram, and Franklin Templeton.",
+    "I started out photographing and managing a brand account at Nordstrom, and my work since has spanned most of marketing, from social and PR to paid, across B2C and B2B. The throughline is brand, and I sweat the small details most people scroll past.",
+    "What I bring to a team is a full-funnel mindset and a cultural read. I'm chronically online across X, TikTok, and Instagram, so I catch trends while they're still small. The rest happens offline, in person at events and in the relationships I build with partners inside the company and out.",
+    "Over the last six months, a couple of favorites: I rebuilt our company podcast from a Zoom setup into a real in-house studio, and its top episode just passed 1.4 million views. A segmentation overhaul lifted our email open rates 27x. I read the data as closely as I read the culture.",
+    "On the side I run The Exposure Project, a mental wellness blog. I write some of it and readers send in the rest. One post pulled over 219k views and 58k likes, and it's where I really learned to create for an audience.",
     "San Francisco. Member of Latinas in Tech, finishing a Masters in Marketing Technology at Santa Clara.",
   ],
 
