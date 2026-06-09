@@ -94,6 +94,7 @@ export const projects: Project[] = [
       { label: "Notable",                 value: "Idris Elba exclusive content partnership" },
     ],
     tones: ["#9aa097", "#54584f"],
+    video: "/work/stellar-social-ecosystem/idris-akuna.mp4",
   },
   {
     slug: "early-b2b-work",
