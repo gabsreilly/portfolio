@@ -111,7 +111,7 @@ export const projects: Project[] = [
     summary:
       "Five years learning B2B content the hard way at two cybersecurity companies of very different sizes.",
     body: [
-      "Five years learning B2B content the hard way at two cybersecurity companies. At Exabeam I ran PR and social as a single program on a single calendar, growing LinkedIn 220% and building Social Dose, a weekly employee advocacy newsletter that worked because it asked almost nothing of the reader. Before Exabeam I ran Imperva's global social-selling program, sourcing 1,200 marketing-qualified leads from social and supporting the company's public rebrand.",
+      "Five years learning B2B content the hard way at two cybersecurity companies. At Exabeam I supported PR and managed our social programs on a single calendar, growing LinkedIn 220% and building Social Dose, a weekly employee advocacy newsletter that worked because it asked almost nothing of the reader. Before Exabeam I ran Imperva's global social-selling program, sourcing 1,200 marketing-qualified leads from social and supporting the company's public rebrand.",
     ],
     metrics: [
       { label: "LinkedIn growth (Exabeam, organic)", value: "+220%" },
