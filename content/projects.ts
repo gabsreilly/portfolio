@@ -33,8 +33,30 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "sdf-studio-podcast",
+    slug: "stellar-social-ecosystem",
     number: "01",
+    title: "Brand & Social",
+    year: "2022-2024",
+    role: "Social Media Strategist",
+    client: "Stellar",
+    summary:
+      "Three years rebuilding Stellar's social presence from a single-channel afterthought into a 900K-follower ecosystem.",
+    body: [
+      "Three years rebuilding Stellar's social presence from a single-channel afterthought into a 900K-follower ecosystem. The throughline was the same one I bring to every channel now: read the audience honestly before you write a word. The Instagram-first playbook was wrong for our actual readers (developers, fintech operators, policy people), so I deprioritized it and rebuilt around LinkedIn and X, where the people who matter actually pay attention.",
+    ],
+    metrics: [
+      { label: "Audience built",          value: "900K+ followers" },
+      { label: "Engagement rate",         value: "2.5% → 6.9%" },
+      { label: "Organic social growth",   value: "+216%" },
+      { label: "Notable",                 value: "Idris Elba exclusive content partnership" },
+    ],
+    tones: ["#9aa097", "#54584f"],
+    video: "/work/stellar-social-ecosystem/idris-akuna.mp4",
+    campaigns: ["stable-summer", "build-better"],
+  },
+  {
+    slug: "sdf-studio-podcast",
+    number: "02",
     title: "Audio + Video",
     year: "2025-present",
     role: "Producer + Content Lead",
@@ -56,15 +78,15 @@ export const projects: Project[] = [
   },
   {
     slug: "stellar-enterprise-content",
-    number: "02",
+    number: "03",
     title: "Content Engine",
     year: "2024-present",
-    role: "Enterprise Content Lead",
+    role: "Editorial & Enterprise Content Lead",
     client: "Stellar",
     summary:
-      "Building the content engine for Stellar's enterprise side, where the audience is the people who hold veto power inside a financial institution.",
+      "Building the editorial content engine for Stellar's enterprise side, where the audience is the people who hold veto power inside a financial institution.",
     body: [
-      "Building the content engine for Stellar's enterprise side, where the audience is people who hold veto power inside a financial institution. The job is making a $55B-a-year open blockchain defensible in the language those institutions actually use about themselves. The engine spans long-form, executive social, podcast, and email. Each piece is built to multiply across the funnel, and each one has to hold up under a closer reading than the first draft ever got.",
+      "Building the editorial content engine for Stellar's enterprise side, where the audience is people who hold veto power inside a financial institution. The job is making a $55B-a-year open blockchain defensible in the language those institutions actually use about themselves. The engine spans long-form, executive social, podcast, and email. Each piece is built to multiply across the funnel, and each one has to hold up under a closer reading than the first draft ever got.",
     ],
     metrics: [
       { label: "Email open rate (segmentation rebuild)", value: "27× lift" },
@@ -73,33 +95,16 @@ export const projects: Project[] = [
       { label: "Partners during tenure",                  value: "PayPal · Visa · MoneyGram · Franklin Templeton · U.S. Bank" },
     ],
     tones: ["#494c2d", "#1f2014"],
-    campaigns: ["stable-summer", "build-better"],
-  },
-  {
-    slug: "stellar-social-ecosystem",
-    number: "03",
-    title: "Social Strategy",
-    year: "2022-2024",
-    role: "Social Media Strategist",
-    client: "Stellar",
-    summary:
-      "Three years rebuilding Stellar's social presence from a single-channel afterthought into a 900K-follower ecosystem.",
-    body: [
-      "Three years rebuilding Stellar's social presence from a single-channel afterthought into a 900K-follower ecosystem. The throughline was the same one I bring to every channel now: read the audience honestly before you write a word. The Instagram-first playbook was wrong for our actual readers (developers, fintech operators, policy people), so I deprioritized it and rebuilt around LinkedIn and X, where the people who matter actually pay attention.",
-    ],
-    metrics: [
-      { label: "Audience built",          value: "900K+ followers" },
-      { label: "Engagement rate",         value: "2.5% → 6.9%" },
-      { label: "Organic social growth",   value: "+216%" },
-      { label: "Notable",                 value: "Idris Elba exclusive content partnership" },
-    ],
-    tones: ["#9aa097", "#54584f"],
-    video: "/work/stellar-social-ecosystem/idris-akuna.mp4",
+    image: "/work/stellar-enterprise-content/franklin-templeton.jpg",
+    link: {
+      label: "Read the Franklin Templeton case study",
+      href: "https://stellar.org/case-studies/franklin-templeton",
+    },
   },
   {
     slug: "early-b2b-work",
     number: "04",
-    title: "PR + Social",
+    title: "Additional Work",
     year: "2017-2022",
     role: "PR + Social Manager",
     client: "Exabeam, Imperva",

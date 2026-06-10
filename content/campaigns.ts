@@ -32,6 +32,14 @@ export type Campaign = {
   heroVideo?: string;
   /** X/Twitter post used as the hero (its video plays in the card). */
   heroTweetId?: string;
+  /** Extra material rendered at the very bottom, after the outcomes band. */
+  appendix?: {
+    kicker?: string;
+    title?: string;
+    body?: string;
+    tweetIds?: string[];
+    gallery?: GalleryItem[];
+  };
 };
 
 export type WritingItem = {
@@ -100,7 +108,7 @@ export type ReactionItem = {
 export const campaigns: Campaign[] = [
   {
     slug: "stable-summer",
-    parentSlug: "stellar-enterprise-content",
+    parentSlug: "stellar-social-ecosystem",
     title: "Stable Summer",
     year: "2025",
     client: "Stellar",
@@ -108,7 +116,7 @@ export const campaigns: Campaign[] = [
     summary:
       "A season-long campaign for Stellar's biggest position: crypto you can trust.",
     tones: ["#b8a8e8", "#f8d63e"], // Stable Summer brand: lavender → yellow
-    heroTweetId: "1940120775429632373", // Cannes — Denelle & Tomer, "stability over volatility"
+    heroVideo: "/campaigns/stable-summer/ooh-hero.mp4", // OOH — "touch down on solid ground"
     sections: [
       {
         kicker: "The setup",
@@ -119,12 +127,13 @@ export const campaigns: Campaign[] = [
           { label: "First federal stablecoin law (GENIUS Act)", value: "Jun 2025" },
           { label: "Circle IPO valuation", value: "$6.9B" },
         ],
-        tweetId: "1945935418580414502", // GENIUS Act passed — Stellar, Jul 17 2025
+        tweetIds: ["1945935418580414502"], // GENIUS Act passed — Stellar, Jul 17 2025
+        band: "lime",
       },
       {
         kicker: "The idea",
         title: "Crypto you can trust.",
-        body: "That isn't a claim Stellar makes — it's how the network is built. Regulated stablecoins, transparent reserves, partners who meet the highest standards, and onchain payments that move across borders in seconds. Stable Summer was the season to make that visible, in places people would actually see.",
+        body: "This is how the network is built. Regulated stablecoins, transparent reserves, partners who meet the highest standards, and onchain payments that move across borders in seconds. Stable Summer was the season to make that visible, in places people would actually see.",
         pullQuote: "Show, don't tell.",
         cta: {
           label: "Read \"Stable Is Hot\" on the Stellar blog",
@@ -136,22 +145,34 @@ export const campaigns: Campaign[] = [
         kicker: "The activations",
         title: "Captured the culture. Prioritized the content.",
         body: "The activations were seeds we planted months in advance. Stable Summer ran across IRL, OOH, social, and developer surfaces. Every touchpoint reinforced the same core message in a different register, and each one earned its own piece of the season's momentum.",
-        tweetIds: [
-          "1951344255781539977", // FWB Fest takeover (errnsterr, Aug 1)
-          "1938624727800541667", // OOH — "touch down on solid ground" (Stellar, Jun 27)
+        gallery: [
+          {
+            title: "Cannes complete.",
+            caption: "Denelle Dixon and Tomer Weller on stability over volatility, every time.",
+            video: "/campaigns/stable-summer/cannes-hero.mp4",
+          },
+          {
+            title: "Stable Summer takeover, Cannes.",
+            caption: "The season's look, owned across the city.",
+            video: "/campaigns/stable-summer/cannes-takeover.mp4",
+          },
+          {
+            title: "A little Stable Summer flow.",
+            caption: "Built to cleanse the timeline.",
+            video: "/campaigns/stable-summer/ss-flow.mp4",
+          },
+          {
+            title: "Trust Circle at FWB FEST.",
+            caption: "Mike Sunda on brand experiences that respect the culture they borrow from.",
+            image: "/campaigns/stable-summer/fwb-trust-circle.jpg",
+          },
         ],
-      },
-      {
-        kicker: "Media outreach",
-        title: "The press carried it too.",
-        body: "The story traveled past our own channels. CoinDesk sat down with Denelle Dixon to walk through how stablecoins, cross-border payments, and remittances had gotten to this point, which put Stellar's read on the moment in front of the industry's core audience.",
-        tweetId: "1932883868719239293", // CoinDesk — Denelle interview, Jun 11
       },
       {
         kicker: "The reception",
         title: "When the right people noticed.",
         body: "Stable Summer was built to land outside the usual industry circles. The strongest signal it worked was who picked it up on their own — musicians, builders, partners, voices we didn't pay for. The kind of reach that doesn't show up in a media plan.",
-        band: "paper-2",
+        band: "orange",
         reactions: [
           // Takes first — text-driven commentary and brand voices.
           {
@@ -235,6 +256,26 @@ export const campaigns: Campaign[] = [
           },
         ],
       },
+      {
+        kicker: "Media outreach",
+        title: "The press carried it too.",
+        body: "The story traveled well past our own channels. CoinDesk sat down with Denelle Dixon on how the moment came together, and Visa's CEO laid out what modern payments need right as Visa brought stablecoin settlement support onto the Stellar network.",
+        gallery: [
+          {
+            title: "Stable Summer, from the source.",
+            caption: "Denelle Dixon carrying the message on her own channel.",
+            video: "/campaigns/stable-summer/denelle-media.mp4",
+            aspect: "16/9",
+          },
+          {
+            title: "Visa picks up the thread.",
+            caption: "Visa's CEO on what payments need, with stablecoin settlement coming to the Stellar network.",
+            video: "/campaigns/stable-summer/visa-ceo.mp4",
+            aspect: "16/9",
+          },
+        ],
+        band: "paper-2",
+      },
     ],
     outcomes: [
       { label: "Total impressions",  value: "4M+" },
@@ -255,7 +296,7 @@ export const campaigns: Campaign[] = [
   },
   {
     slug: "build-better",
-    parentSlug: "stellar-enterprise-content",
+    parentSlug: "stellar-social-ecosystem",
     title: "Build Better",
     year: "2024",
     client: "Stellar",
@@ -274,6 +315,7 @@ export const campaigns: Campaign[] = [
           { label: "Audience", value: "Devs already building on other chains" },
           { label: "Launch", value: "Jul 2024" },
         ],
+        band: "lime",
       },
       {
         kicker: "The strategy",
@@ -286,23 +328,14 @@ export const campaigns: Campaign[] = [
       {
         kicker: "The proof",
         title: "Decaf showed Soroban working in the real world.",
-        body: "Decaf is a payments app built on Stellar that lets people across Latin America spend crypto at everyday shops. In the case study, Juliana explains why it matters: the world is changing, and people cannot be left behind. A real merchant solving a real problem was more convincing than any benchmark, so the case study led the season. The rest of the work supported it: a blog series on sustainability, performance, and security, Soroban 101 explainers, live Twitter Spaces and dev takeovers with a Solana co-founder, and an interactive map of Stellar's payment rails across more than 180 countries.",
+        body: "Decaf is a payments app on Stellar that lets people across Latin America spend crypto at everyday shops. One merchant solving a real problem did more to convince developers than any benchmark, so the case study led the campaign while the rest of the work backed it up.",
         tweetId: "1859294165118431292",
-        tweetIds: ["1823791683412353243"], // SDF CTO Nicolas Barry — "build safer", #BetterOnStellar
-        gallery: [
-          {
-            title: "Build Better Challenge",
-            caption: "A Dev.to-hosted hackathon that drew 200+ applications competing for over $50K in awards. Judges weighed entries across categories built to give ambitious builders a launchpad for projects that push Web3 forward.",
-            href: "https://stellar.org/community/build-better-challenge",
-            tones: ["#13233a", "#5ef2a0"],
-          },
-        ],
       },
       {
         kicker: "Building in public",
         title: "One explainer pulled in a Solana co-founder.",
         body: "Garand Tyson made a short video explaining how Stellar handles state bloat, using State Archival to clear on-chain spam and unused data. It reached exactly the people who would push back on it. Anatoly Yakovenko, co-founder of Solana, weighed in, and two weeks later he was on a live X Space with Garand and Tomer Weller, working through how to solve state bloat in the open. That debate came straight from the content we published.",
-        band: "lime",
+        band: "orange",
         tweetIds: [
           "1813633045280469471", // Garand Tyson State Archival explainer (Jul 17 2024)
           "1817972133852840170", // Industry Perspectives live X Space w/ Anatoly (Jul 29 2024)
@@ -327,6 +360,19 @@ export const campaigns: Campaign[] = [
       { label: "Content formats",                  value: "Films · Blog series · Case studies · Spaces" },
       { label: "Channels",                         value: "Video · Blog · Social · Developer" },
     ],
+    appendix: {
+      kicker: "Also",
+      tweetIds: ["1823791683412353243"], // SDF CTO Nicolas Barry — "build safer"
+      gallery: [
+        {
+          title: "Build Better Challenge",
+          caption: "A Dev.to-hosted hackathon that drew 200+ applications competing for over $50K in awards. Judges weighed entries across categories built to give ambitious builders a launchpad for projects that push Web3 forward.",
+          href: "https://stellar.org/community/build-better-challenge",
+          image: "/campaigns/build-better/challenge-keyart.png",
+          tones: ["#13233a", "#5ef2a0"],
+        },
+      ],
+    },
   },
 ];
 

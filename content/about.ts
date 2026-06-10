@@ -19,18 +19,18 @@ export const about = {
 
   // Hero positioning — broader than her current B2B job title.
   roleLine: "Marketing & Creative Communications",
-  forLine:  "Making brands harder to forget.",
+  forLine:  "Making brands impossible to forget.",
 
   shortBio:
-    "I lead enterprise content at Stellar, the open blockchain moving about $55B a year for institutions like PayPal, Visa, MoneyGram, and Franklin Templeton.",
+    "I lead editorial content at Stellar, the open blockchain moving about $55B a year for institutions like PayPal, Visa, MoneyGram, and Franklin Templeton.",
 
   paragraphs: [
-    "I'm Gabriella. I lead enterprise content at Stellar, the payments network moving about $55B a year for PayPal, Visa, MoneyGram, and Franklin Templeton.",
-    "I started out photographing and managing a brand account at Nordstrom, and my work since has spanned most of marketing, from social and PR to paid, across B2C and B2B. The throughline is brand, and I sweat the small details most people scroll past.",
-    "What I bring to a team is a full-funnel mindset and a cultural read. I'm chronically online across X, TikTok, and Instagram, so I catch trends while they're still small. The rest happens offline, in person at events and in the relationships I build with partners inside the company and out.",
-    "Over the last six months, a couple of favorites: I rebuilt our company podcast from a Zoom setup into a real in-house studio, and its top episode just passed 1.4 million views. A segmentation overhaul lifted our email open rates 27x. I read the data as closely as I read the culture.",
-    "On the side I run The Exposure Project, a mental wellness blog. I write some of it and readers send in the rest. One post pulled over 219k views and 58k likes, and it's where I really learned to create for an audience.",
-    "San Francisco. Member of Latinas in Tech, finishing a Masters in Marketing Technology at Santa Clara.",
+    "I'm Gabriella. I lead editorial content at Stellar, the payments network powering roughly $55B in annual transaction volume for companies like PayPal, Visa, MoneyGram, and Franklin Templeton.",
+    "My career started behind the camera at Nordstrom, managing social, and has since spanned nearly every corner of marketing, from PR and paid media to content and brand strategy, across both B2C and B2B. The constant has always been brand, and I care deeply about the details most people scroll past.",
+    "I bring a full-funnel perspective and a sharp cultural read to everything I do. I'm immersed in the conversations happening across X, TikTok, and Instagram, which helps me spot shifts and opportunities early. The rest happens offline, in person at events and in the relationships I build with partners inside the company and out.",
+    "Recently, I rebuilt Stellar's podcast from a Zoom recording setup into a dedicated in-house studio, with its top episode surpassing 1.4 million views. I also led a segmentation overhaul that increased email open rates by 27x. I read the data as closely as I read the culture.",
+    "Outside of work, I run The Exposure Project, a mental wellness publication centered on honest, human stories. Readers contribute their own experiences alongside my writing, creating a space that's as much community as it is content. Our most-read post reached more than 219K views and 58K likes, but the bigger takeaway was understanding what earns attention and what earns trust. It's where I learned that the strongest content doesn't just capture an audience; it creates connection.",
+    "I'm based in San Francisco, a member of Latinas in Tech, and currently completing a Master's in Marketing Technology at Santa Clara University.",
   ],
 
   practising: [
@@ -80,17 +80,17 @@ export const about = {
     {
       number: "I",
       title: "See it before it's obvious.",
-      body: "Everyone starts from the same brief and the same data. I catch the angle earlier, and I'd rather move on it early than wait until it's safe.",
+      body: "The biggest opportunities exist before they're undeniable. I trust the signal, make the call, and move early.",
     },
     {
       number: "II",
-      title: "The machine doesn't supply the judgment.",
+      title: "AI doesn't supply the judgment.",
       body: "It can draft, speed things up, give me ten versions. Which one's good is still my call.",
     },
     {
       number: "III",
       title: "Comfortable isn't the bar.",
-      body: "The best work happens past the point where it's comfortable. I aim high — and I push the people around me to aim there too.",
+      body: "The best work happens past the point where it's comfortable. I aim high, and I push the people around me to aim there too.",
     },
   ],
 

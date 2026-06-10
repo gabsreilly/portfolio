@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
@@ -86,6 +87,27 @@ export default async function WorkPage({
                 title={project.title}
                 ratio={project.videoRatio}
               />
+            ) : project.image ? (
+              <figure>
+                <ImageHero
+                  src={project.image}
+                  alt={project.title}
+                  href={project.link?.href}
+                />
+                {project.link && (
+                  <figcaption className="mt-3">
+                    <a
+                      href={project.link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group inline-flex items-baseline gap-2 font-display text-sm text-ink-2 transition-colors hover:text-orange md:text-base"
+                    >
+                      {project.link.label}
+                      <span className="italic text-orange">↗︎</span>
+                    </a>
+                  </figcaption>
+                )}
+              </figure>
             ) : (
               <div
                 className="aspect-[16/9] w-full overflow-hidden rounded-sm ring-1 ring-line"
@@ -193,28 +215,30 @@ export default async function WorkPage({
           </section>
         )}
 
-        {/* Outcomes — only render if metrics exist */}
+        {/* Outcomes — deep blue band */}
         {project.metrics && project.metrics.length > 0 && (
-          <section className="mx-auto max-w-[1400px] px-6 pt-20 md:px-10 md:pt-28">
-            <div className="grid gap-10 md:grid-cols-12">
-              <div className="md:col-span-3">
-                <Reveal>
-                  <span className="label">Outcomes</span>
-                </Reveal>
-              </div>
-              <div className="md:col-span-9">
-                <dl className="grid gap-x-10 gap-y-8 md:grid-cols-2">
-                  {project.metrics.map((m) => (
-                    <Reveal key={m.label}>
-                      <div className="border-t border-line pt-4">
-                        <dt className="label">{m.label}</dt>
-                        <dd className="mt-2 font-display text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.1] tracking-[-0.01em]">
-                          {m.value}
-                        </dd>
-                      </div>
-                    </Reveal>
-                  ))}
-                </dl>
+          <section className="on-dark mt-20 bg-blue py-16 text-paper md:mt-28 md:py-24">
+            <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+              <div className="grid gap-10 md:grid-cols-12">
+                <div className="md:col-span-3">
+                  <Reveal>
+                    <span className="label">Outcomes</span>
+                  </Reveal>
+                </div>
+                <div className="md:col-span-9">
+                  <dl className="grid gap-x-10 gap-y-8 md:grid-cols-2">
+                    {project.metrics.map((m) => (
+                      <Reveal key={m.label}>
+                        <div className="border-t border-paper/20 pt-4">
+                          <dt className="label">{m.label}</dt>
+                          <dd className="mt-2 font-display text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.1] tracking-[-0.01em] text-paper">
+                            {m.value}
+                          </dd>
+                        </div>
+                      </Reveal>
+                    ))}
+                  </dl>
+                </div>
               </div>
             </div>
           </section>
@@ -244,5 +268,35 @@ function Meta({ label, value }: { label: string; value: string }) {
       <span className="label">{label}</span>
       <p className="mt-2 font-display text-xl leading-snug">{value}</p>
     </div>
+  );
+}
+
+function ImageHero({
+  src,
+  alt,
+  href,
+}: {
+  src: string;
+  alt: string;
+  href?: string;
+}) {
+  const frame = (
+    <div className="aspect-[16/9] w-full overflow-hidden rounded-sm ring-1 ring-line">
+      <Image
+        src={src}
+        alt={alt}
+        width={1800}
+        height={945}
+        priority
+        className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+      />
+    </div>
+  );
+  return href ? (
+    <a href={href} target="_blank" rel="noreferrer" className="group block">
+      {frame}
+    </a>
+  ) : (
+    frame
   );
 }

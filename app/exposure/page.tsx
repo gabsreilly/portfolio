@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
@@ -47,25 +48,26 @@ export default function ExposurePage() {
           <div className="grid gap-10 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-5">
               <Reveal>
-                <div
-                  className="relative aspect-[4/5] w-full overflow-hidden rounded-sm ring-1 ring-line"
-                  style={{
-                    background:
-                      "linear-gradient(160deg, #1a1714 0%, #4a443d 100%)",
-                  }}
+                <a
+                  href={exposure.site.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
                 >
-                  <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
-                    <span className="font-display italic text-3xl text-cream md:text-4xl">
-                      a mental wellness publication
-                    </span>
-                    <span
-                      className="label mt-3"
-                      style={{ color: "var(--cream-2)" }}
-                    >
-                      OCD · Anxiety · Depression · +
-                    </span>
+                  <div className="relative aspect-[2/3] w-full overflow-hidden rounded-sm ring-1 ring-line bg-ink/[0.04]">
+                    <Image
+                      src="/exposure/journal-entries.png"
+                      alt="Journal Entries on The Exposure Project"
+                      width={812}
+                      height={1202}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    />
                   </div>
-                </div>
+                  <figcaption className="mt-3 inline-flex items-baseline gap-2 font-display text-sm text-ink-2 transition-colors group-hover:text-orange md:text-base">
+                    Journal Entries on The Exposure Project
+                    <span className="italic text-orange">↗︎</span>
+                  </figcaption>
+                </a>
               </Reveal>
             </div>
 

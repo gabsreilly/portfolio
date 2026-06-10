@@ -51,18 +51,14 @@ export function WorkIndex({ projects }: { projects: Project[] }) {
             >
               <span className="label col-span-2 md:col-span-1">{p.number}</span>
 
-              <span className="col-span-7 md:col-span-7">
+              <span className="col-span-10 md:col-span-8">
                 <span className="font-display text-lg leading-tight md:text-xl">
                   {p.title}
                 </span>
               </span>
 
-              <span className="label col-span-2 hidden md:col-span-3 md:inline">
+              <span className="label col-span-2 hidden text-right md:col-span-3 md:inline">
                 {p.client}
-              </span>
-
-              <span className="label col-span-3 text-right md:col-span-1">
-                {p.year}
               </span>
             </Link>
           </li>

@@ -24,13 +24,7 @@ export function AboutPanel({
     <section id="about" className="bg-lime px-6 py-5 md:px-10 md:py-6">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
-          <span className="font-display text-lg italic text-ink md:text-xl">
-            About me
-          </span>
-        </Reveal>
-
-        <Reveal>
-          <p className="mx-auto mt-4 max-w-2xl text-left text-base leading-relaxed text-ink md:text-lg md:leading-[1.6]">
+          <p className="mx-auto max-w-2xl text-sm italic leading-relaxed text-ink md:text-base md:leading-[1.7]">
             {first}
           </p>
         </Reveal>
@@ -46,7 +40,7 @@ export function AboutPanel({
               {rest.map((p, i) => (
                 <p
                   key={i}
-                  className="mx-auto mb-5 max-w-2xl text-left text-base leading-relaxed text-ink last:mb-0 md:text-lg md:leading-[1.6]"
+                  className="mx-auto mb-5 max-w-2xl text-sm italic leading-relaxed text-ink last:mb-0 md:text-base md:leading-[1.7]"
                 >
                   {p}
                 </p>

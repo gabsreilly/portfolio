@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { VideoEmbed } from "@/components/video-embed";
 import { TweetEmbed, TweetWall } from "@/components/tweet-embed";
+import { ReactionsRow } from "@/components/reactions-row";
 import { campaigns, getCampaign } from "@/content/campaigns";
 import { getProject } from "@/content/projects";
 import type { GalleryItem, ReactionItem } from "@/content/campaigns";
@@ -145,7 +146,12 @@ export default async function CampaignPage({
                     <div className="md:col-span-3">
                       {s.kicker && (
                         <Reveal>
-                          <span className="label">{s.kicker}</span>
+                          <span
+                            className="label"
+                            style={{ color: bandLabelColor(s.band) }}
+                          >
+                            {s.kicker}
+                          </span>
                         </Reveal>
                       )}
                     </div>
@@ -171,7 +177,12 @@ export default async function CampaignPage({
                               <dl className="mt-10 grid gap-x-8 gap-y-6 border-t border-line pt-6 md:grid-cols-3">
                                 {s.stats.map((stat) => (
                                   <div key={stat.label}>
-                                    <dt className="label">{stat.label}</dt>
+                                    <dt
+                                      className="label"
+                                      style={{ color: bandLabelColor(s.band) }}
+                                    >
+                                      {stat.label}
+                                    </dt>
                                     <dd className="mt-2 font-display text-2xl leading-tight tracking-[-0.01em] md:text-3xl">
                                       {stat.value}
                                     </dd>
@@ -223,7 +234,7 @@ export default async function CampaignPage({
                       )}
                       {s.reactions && s.reactions.length > 0 && (
                         <Reveal delay={480}>
-                          <Reactions items={s.reactions} />
+                          <ReactionsRow items={s.reactions} />
                         </Reveal>
                       )}
                     </div>
@@ -313,6 +324,52 @@ export default async function CampaignPage({
           </section>
         )}
 
+        {/* Appendix — extra material under the outcomes */}
+        {campaign.appendix && (
+          <section className="bg-paper-2 pt-14 pb-20 md:pt-20 md:pb-28">
+            <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
+                <div className="md:col-span-3">
+                  <Reveal>
+                    <span className="label">
+                      {campaign.appendix.kicker ?? "More"}
+                    </span>
+                  </Reveal>
+                </div>
+                <div className="md:col-span-9">
+                  {campaign.appendix.title && (
+                    <Reveal delay={120}>
+                      <h2 className="font-display display-bold text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.05] tracking-[-0.02em]">
+                        {campaign.appendix.title}
+                      </h2>
+                    </Reveal>
+                  )}
+                  {campaign.appendix.body && (
+                    <Reveal delay={200}>
+                      <p className="mt-5 max-w-3xl text-lg leading-relaxed md:text-xl md:leading-[1.55]">
+                        {campaign.appendix.body}
+                      </p>
+                    </Reveal>
+                  )}
+                  <Reveal delay={300}>
+                    <div className="mt-8 grid items-start gap-6 md:grid-cols-2 md:gap-8">
+                      {campaign.appendix.tweetIds?.map((id) => (
+                        <TweetEmbed key={id} id={id} className="w-full" />
+                      ))}
+                      {campaign.appendix.gallery &&
+                        campaign.appendix.gallery.length > 0 && (
+                          <div className="[&>div]:mt-0">
+                            <Gallery items={campaign.appendix.gallery} />
+                          </div>
+                        )}
+                    </div>
+                  </Reveal>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
       </main>
       <SiteFooter
         parent={
@@ -335,14 +392,23 @@ function bandClass(band: string | undefined): string {
     case "lime":
       return "bg-lime";
     case "blue":
-      return "bg-blue text-paper";
+      return "bg-blue text-paper on-dark";
     case "orange":
-      return "bg-orange text-cream";
+      return "bg-orange text-cream on-dark";
     case "stone":
       return "bg-stone";
     default:
       return ""; // "paper" — page default
   }
+}
+
+/* bandLabelColor — keeps the small uppercase labels legible on each band.
+   .label is hardcoded to --ink-3, which goes muddy on lime and invisible on
+   the dark bands, so we override per band. */
+function bandLabelColor(band: string | undefined): string | undefined {
+  if (band === "blue" || band === "orange") return "var(--cream-2)";
+  if (band === "lime" || band === "stone") return "var(--ink)";
+  return undefined; // paper / paper-2 keep the default ink-3
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -383,19 +449,24 @@ function PlaceholderHero({
    Gallery — grid of placeholder tiles (or real images / videos).
    ───────────────────────────────────────────────────────────── */
 function Gallery({ items }: { items: GalleryItem[] }) {
+  // A lone item fills the full width of its container instead of a dead column.
+  const fullWidth = items.length === 1;
   return (
-    <div className="mt-10 grid gap-4 md:grid-cols-2 md:gap-6">
+    <div
+      className={`mt-10 grid gap-4 md:gap-6 ${fullWidth ? "" : "md:grid-cols-2"}`}
+    >
       {items.map((item, i) => {
         const media = (
           <div
-            className="relative aspect-[4/3] w-full overflow-hidden rounded-sm ring-1 ring-line transition-transform duration-500 ease-out group-hover:scale-[1.01]"
-            style={
-              !item.image && !item.video
+            className="relative w-full overflow-hidden rounded-sm ring-1 ring-line transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+            style={{
+              aspectRatio: item.aspect ?? "4 / 3",
+              ...(!item.image && !item.video
                 ? {
                     background: `linear-gradient(135deg, ${item.tones?.[0] ?? "#9aa097"} 0%, ${item.tones?.[1] ?? "#54584f"} 100%)`,
                   }
-                : undefined
-            }
+                : {}),
+            }}
           >
             {item.image ? (
               <Image
@@ -406,7 +477,11 @@ function Gallery({ items }: { items: GalleryItem[] }) {
                 className="h-full w-full object-cover"
               />
             ) : item.video ? (
-              <VideoEmbed src={item.video} title={item.title} ratio="4/3" />
+              <VideoEmbed
+                src={item.video}
+                title={item.title}
+                ratio={item.aspect ?? "4/3"}
+              />
             ) : (
               <div className="flex h-full w-full items-end p-4 md:p-6">
                 <span className="font-display text-xl italic leading-tight text-paper/95 mix-blend-screen md:text-2xl">
