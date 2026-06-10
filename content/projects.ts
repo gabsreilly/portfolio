@@ -120,6 +120,7 @@ export const projects: Project[] = [
       { label: "Recognition",                         value: "MVP Award, \"Delivering the Exceptional\"" },
     ],
     tones: ["#9c8b6b", "#3a3327"],
+    image: "/work/early-b2b-work/exagals.png",
   },
 ];
 
