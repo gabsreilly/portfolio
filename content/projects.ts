@@ -74,7 +74,7 @@ export const projects: Project[] = [
     ],
     tones: ["#2a2722", "#5b5448"],
     video: "/work/sdf-studio-podcast/airtm-block-by-block.mp4",
-    tweetIds: ["2011533350344016078", "2001032073940009162"],
+    tweetIds: ["2031151877258396113", "2001032073940009162"],
   },
   {
     slug: "stellar-enterprise-content",
